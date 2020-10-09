@@ -2,8 +2,8 @@ Important Concepts
 ~~~~~~~~~~~~~~~~~~
 
 .. contents::
-	 :depth: 1
-	 :local:
+     :depth: 1
+     :local:
 
 Disable vs Offline
 ------------------
@@ -94,8 +94,8 @@ Pools.
 Use the nodes API operations to list, delete, and update nodes.
 
 .. contents::
-	 :depth: 1
-	 :local:
+     :depth: 1
+     :local:
 
 Retrieve nodes
 --------------
@@ -121,10 +121,17 @@ Retrieve a list of nodes
             {
                 "id": "127.0.0.1",
                 "address": "127.0.0.1",
-                "appService": "none",
+                "appService": null,
                 "connectionLimit": 0,
                 "description": "a node",
                 "dynamicRatio": 1,
+                "fqdn": {
+                    "addressFamily": "ipv4",
+                    "autopopulate": "disabled",
+                    "downInterval": 5,
+                    "interval": 3600,
+                    "name": "none"
+                 },
                 "logging": "disabled",
                 "metadata": {},
                 "monitors": {},
@@ -221,11 +228,11 @@ Response
                     "pktsOut": 1,
                     "totConns": 1
                 },
-                "sessionStatus": "fine",
+                "sessionStatus": "enabled",
                 "status": {
-                    "availabilityState": "available",
-                    "enabledState": "maybe",
-                    "statusReason": "because"
+                    "availabilityState": "offline",
+                    "enabledState": "enabled",
+                    "statusReason": "Forced down"
                 },
                 "totRequests": 3,
             }
@@ -257,11 +264,19 @@ Response
                 "connectionLimit": 0,
                 "description": "a node",
                 "dynamicRatio": 1,
+                "fqdn": {
+                    "addressFamily": "ipv4",
+                    "autopopulate": "disabled",
+                    "downInterval": 5,
+                    "interval": 3600,
+                    "name": "none"
+                },
                 "logging": "disabled",
                 "monitors": {},
                 "metadata": {},
                 "partition": "Common",
                 "rateLimit": "disabled",
+                "ratio": 1,
                 "session": "user-enabled",
                 "state": "unchecked"
             }
@@ -375,11 +390,11 @@ Returns statistics for the specified node.
                     "pktsOut": 1,
                     "totConns": 1
                 },
-                "sessionStatus": "fine",
+                "sessionStatus": "enabled",
                 "status": {
-                    "availabilityState": "available",
-                    "enabledState": "maybe",
-                    "statusReason": "because"
+                    "availabilityState": "offline",
+                    "enabledState": "enabled",
+                    "statusReason": "Forced down"
                 },
                 "totRequests": 3
             }
@@ -415,12 +430,12 @@ Response
 ::
 
     {
-	"data": {
-		"eventId": "<eventId:str>",
-		"status": "PROCESSING",
-		"resource": "<nodeId:str>",
-		"timestamp": "2016-03-08T17:22:33.6249648Z",
-		"eventRef": "/events/<eventId:str>"
+    "data": {
+        "eventId": "<eventId:str>",
+        "status": "PROCESSING",
+        "resource": "<nodeId:str>",
+        "timestamp": "2016-03-08T17:22:33.6249648Z",
+        "eventRef": "/events/<eventId:str>"
         }
     }
 
@@ -450,12 +465,12 @@ Response
 ::
 
     {
-	"data": {
-		"eventId": "<eventId:str>",
-		"status": "PROCESSING",
-		"resource": "<nodeId:str>",
-		"timestamp": "2016-03-08T17:22:33.6249648Z",
-		"eventRef": "/events/<eventId:str>"
+    "data": {
+        "eventId": "<eventId:str>",
+        "status": "PROCESSING",
+        "resource": "<nodeId:str>",
+        "timestamp": "2016-03-08T17:22:33.6249648Z",
+        "eventRef": "/events/<eventId:str>"
         }
     }
 
@@ -484,12 +499,12 @@ Response
 ::
 
     {
-	"data": {
-		"eventId": "<eventId:str>",
-		"status": "PROCESSING",
-		"resource": "<nodeId:str>",
-		"timestamp": "2016-03-08T17:22:33.6249648Z",
-		"eventRef": "/events/<eventId:str>"
+    "data": {
+        "eventId": "<eventId:str>",
+        "status": "PROCESSING",
+        "resource": "<nodeId:str>",
+        "timestamp": "2016-03-08T17:22:33.6249648Z",
+        "eventRef": "/events/<eventId:str>"
         }
     }
 
@@ -514,12 +529,12 @@ Response
 ::
 
     {
-	"data": {
-		"eventId": "<eventId:str>",
-		"status": "PROCESSING",
-		"resource": "<nodeId:str>",
-		"timestamp": "2016-03-08T17:22:33.6249648Z",
-		"eventRef": "/events/<eventId:str>"
+    "data": {
+        "eventId": "<eventId:str>",
+        "status": "PROCESSING",
+        "resource": "<nodeId:str>",
+        "timestamp": "2016-03-08T17:22:33.6249648Z",
+        "eventRef": "/events/<eventId:str>"
         }
     }
 
@@ -531,8 +546,8 @@ Monitors verify the health and availability of a node, a pool, or group of
 nodes in a pool.
 
 .. contents::
-	 :depth: 1
-	 :local:
+     :depth: 1
+     :local:
 
 
 Retrieve monitor rule for node
@@ -651,6 +666,7 @@ Remove the monitor rule from the specified node.
    
    When a monitor-rule is deleted, all monitors associated to 
    the node will be deleted as well.
+
 ::
 
     DELETE /nodes/{nodeId}/monitor-rule
@@ -684,8 +700,8 @@ bound to one or more virtual servers.
 Use the following operations to view and manage pools.
 
 .. contents::
-	 :depth: 1
-	 :local:
+     :depth: 1
+     :local:
 
 Retrieve pools
 --------------
@@ -1052,6 +1068,7 @@ Delete a monitor rule for the specified pool.
 .. note::
    When a monitor-rule is deleted, all monitors associated to
    the pool will be deleted as well.
+
 ::
 
 
@@ -1152,8 +1169,8 @@ a virtual server configured in the load balancer.
 Use the following operations to view and manage pool members.
 
 .. contents::
-	 :depth: 1
-	 :local:
+     :depth: 1
+     :local:
 
 
 Retrieve pool members for a pool
@@ -1613,7 +1630,7 @@ Use this feature to prevent new connections to a Pool Member without affecting e
 
 To monitor connection stats of a Pool Member, see: `Retrieve statistics for pool members`_. Review the first object in the data array. The `serverside` object shows stats on activity to the member. 
 
-To re-enable the Pool Member, see: `Enable Pool Member For Maintenance`_.
+To re-enable the Pool Member, see: `Enable Pool Member After Maintenance`_.
 
 *Note: It is important to understand differences between* `Disable vs Offline`_.
 
@@ -1706,12 +1723,12 @@ Response
 ::
 
     {
-	"data": {
-		"eventId": "<eventId:str>",
-		"status": "PROCESSING",
-		"resource": "<nodeId:str>",
-		"timestamp": "2016-03-08T17:22:33.6249648Z",
-		"eventRef": "/events/<eventId:str>"
+    "data": {
+        "eventId": "<eventId:str>",
+        "status": "PROCESSING",
+        "resource": "<nodeId:str>",
+        "timestamp": "2016-03-08T17:22:33.6249648Z",
+        "eventRef": "/events/<eventId:str>"
         }
     }
 
@@ -1736,12 +1753,12 @@ Response
 ::
 
     {
-	"data": {
-		"eventId": "<eventId:str>",
-		"status": "PROCESSING",
-		"resource": "<nodeId:str>",
-		"timestamp": "2016-03-08T17:22:33.6249648Z",
-		"eventRef": "/events/<eventId:str>"
+    "data": {
+        "eventId": "<eventId:str>",
+        "status": "PROCESSING",
+        "resource": "<nodeId:str>",
+        "timestamp": "2016-03-08T17:22:33.6249648Z",
+        "eventRef": "/events/<eventId:str>"
         }
     }
 
@@ -1758,8 +1775,8 @@ Use the following operations to view and manage virtual servers configured in
 the load balancer.
 
 .. contents::
-	 :depth: 1
-	 :local:
+     :depth: 1
+     :local:
 
 Retrieve virtual server details
 -------------------------------
@@ -1784,23 +1801,21 @@ Response
                 "id": "VIP-127.0.0.1-80",
                 "address": "127.0.0.1",
                 "addressStatus": "yes",
-                "appService": "none",
-                "auth": "none",
+                "appService": null,
+                "auth": {},
                 "autoLasthop": "default",
-                "bwcPolicy": "none",
-                "clonePools": "none",
+                "bwcPolicy": null,
+                "clonePools": {},
                 "cmpEnabled": "yes",
                 "connectionLimit": 0,
-                "description": "none",
-                "destination": "127.0.0.1:http",
-                "enabled": "enabled",
-                "fallbackPersistence": "none",
+                "description": null,
+                "fallbackPersistence": null,
                 "gtmScore": 0,
                 "ipForward": "",
                 "ipProtocol": "tcp",
-                "lastHopPool": "none",
+                "lastHopPool": null,
                 "mask": "255.255.255.255",
-                "metadata": "none",
+                "metadata": {},
                 "mirror": "disabled",
                 "mobileAppTunnel": "disabled",
                 "nat64": "disabled",
@@ -1824,14 +1839,14 @@ Response
                         "context": "all"
                     }
                 },
-                "rateClass": "none",
+                "rateClass": null,
                 "rateLimit": "disabled",
                 "rateLimitDstMask": 0,
                 "rateLimitMode": "object",
                 "rateLimitSrcMask": 0,
-                "relatedRules": "none",
-                "rules": "none",
-                "securityLogProfiles": "none",
+                "relatedRules": null,
+                "rules": null,
+                "securityLogProfiles": {},
                 "source": "0.0.0.0/0",
                 "sourceAddressTranslation": {
                     "pool": "none",
@@ -1839,11 +1854,10 @@ Response
                 },
                 "sourcePort": "preserve",
                 "synCookieStatus": "not-activated",
-                "trafficClasses": "none",
+                "trafficClasses": {},
                 "translateAddress": "enabled",
                 "translatePort": "enabled",
-                "vlans": "none",
-                "vlansDisabled": "vlans-disabled",
+                "vlans": {},
                 "vsIndex": 7
             }
         ]
@@ -2137,22 +2151,20 @@ Response
                 "address": "127.0.0.1",
                 "addressStatus": "yes",
                 "appService": "none",
-                "auth": "none",
+                "auth": {},
                 "autoLasthop": "default",
-                "bwcPolicy": "none",
-                "clonePools": "none",
+                "bwcPolicy": null,
+                "clonePools": {},
                 "cmpEnabled": "yes",
                 "connectionLimit": 0,
                 "description": "none",
-                "destination": "127.0.0.1:http",
-                "enabled": "enabled",
-                "fallbackPersistence": "none",
+                "fallbackPersistence": null,
                 "gtmScore": 0,
                 "ipForward": "",
                 "ipProtocol": "tcp",
-                "lastHopPool": "none",
+                "lastHopPool": null,
                 "mask": "255.255.255.255",
-                "metadata": "none",
+                "metadata": null,
                 "mirror": "disabled",
                 "mobileAppTunnel": "disabled",
                 "nat64": "disabled",
@@ -2162,7 +2174,7 @@ Response
                         "default": "yes"
                     }
                 },
-                "policies": "none",
+                "policies": {},
                 "pool": {},
                 "port": {
                     "type": "equal",
@@ -2176,14 +2188,14 @@ Response
                         "context": "all"
                     }
                 },
-                "rateClass": "none",
+                "rateClass": null,
                 "rateLimit": "disabled",
                 "rateLimitDstMask": 0,
                 "rateLimitMode": "object",
                 "rateLimitSrcMask": 0,
-                "relatedRules": "none",
-                "rules": "none",
-                "securityLogProfiles": "none",
+                "relatedRules": null,
+                "rules": null,
+                "securityLogProfiles": {},
                 "source": "0.0.0.0/0",
                 "sourceAddressTranslation": {
                     "pool": "none",
@@ -2191,11 +2203,10 @@ Response
                 },
                 "sourcePort": "preserve",
                 "synCookieStatus": "not-activated",
-                "trafficClasses": "none",
+                "trafficClasses": {},
                 "translateAddress": "enabled",
                 "translatePort": "enabled",
-                "vlans": "none",
-                "vlansDisabled": "vlans-disabled",
+                "vlans": {},
                 "vsIndex": 7
             }
         ]
@@ -2473,153 +2484,6 @@ Retrieve a list of stats.
                 },
                 "syncookieStatus": "not-activated",
                 "totRequests": 0
-            },
-            {
-                "clientside": {
-                    "bitsIn": 0,
-                    "bitsOut": 0,
-                    "curConns": 0,
-                    "maxConns": 0,
-                    "pktsIn": 0,
-                    "pktsOut": 0,
-                    "totConns": 0
-                },
-                "cmpEnableMode": "all-cpus",
-                "cmpEnabled": "enabled",
-                "csMaxConnDur": 0,
-                "csMeanConnDur": 0,
-                "csMinConnDur": 0,
-                "destination": "127.0.0.1:443",
-                "ephemeral": {
-                    "bitsIn": 0,
-                    "bitsOut": 0,
-                    "curConns": 0,
-                    "maxConns": 0,
-                    "pktsIn": 0,
-                    "pktsOut": 0,
-                    "totConns": 0
-                },
-                "fiveMinAvgUsageRatio": 0,
-                "fiveSecAvgUsageRatio": 0,
-                "id": "TestVip-DONT-DELETE",
-                "name": "TestVip-DONT-DELETE",
-                "oneMinAvgUsageRatio": 0,
-                "status": {
-                    "availabilityState": "unknown",
-                    "enabledState": "enabled",
-                    "statusReason": "The children pool member(s) either don't have service checking enabled, or service check results are not available yet"
-                },
-                "syncookie": {
-                    "accepts": 0,
-                    "hwAccepts": 0,
-                    "hwSyncookies": 0,
-                    "hwsyncookieInstance": 0,
-                    "rejects": 0,
-                    "swsyncookieInstance": 0,
-                    "syncacheCurr": 0,
-                    "syncacheOver": 0,
-                    "syncookies": 0
-                },
-                "syncookieStatus": "not-activated",
-                "totRequests": 0
-            },
-            {
-                "clientside": {
-                    "bitsIn": 0,
-                    "bitsOut": 0,
-                    "curConns": 0,
-                    "maxConns": 0,
-                    "pktsIn": 0,
-                    "pktsOut": 0,
-                    "totConns": 0
-                },
-                "cmpEnableMode": "all-cpus",
-                "cmpEnabled": "enabled",
-                "csMaxConnDur": 0,
-                "csMeanConnDur": 0,
-                "csMinConnDur": 0,
-                "destination": "127.0.0.1:443",
-                "ephemeral": {
-                    "bitsIn": 0,
-                    "bitsOut": 0,
-                    "curConns": 0,
-                    "maxConns": 0,
-                    "pktsIn": 0,
-                    "pktsOut": 0,
-                    "totConns": 0
-                },
-                "fiveMinAvgUsageRatio": 0,
-                "fiveSecAvgUsageRatio": 0,
-                "id": "VIP-127.0.0.1-443",
-                "name": "VIP-127.0.0.1-443",
-                "oneMinAvgUsageRatio": 0,
-                "status": {
-                    "availabilityState": "available",
-                    "enabledState": "enabled",
-                    "statusReason": "The virtual server is available"
-                },
-                "syncookie": {
-                    "accepts": 0,
-                    "hwAccepts": 0,
-                    "hwSyncookies": 0,
-                    "hwsyncookieInstance": 0,
-                    "rejects": 0,
-                    "swsyncookieInstance": 0,
-                    "syncacheCurr": 0,
-                    "syncacheOver": 0,
-                    "syncookies": 0
-                },
-                "syncookieStatus": "not-activated",
-                "totRequests": 0
-            },
-            {
-                "clientside": {
-                    "bitsIn": 2784874696,
-                    "bitsOut": 13416053656,
-                    "curConns": 5,
-                    "maxConns": 61,
-                    "pktsIn": 5698557,
-                    "pktsOut": 1560895,
-                    "totConns": 1485109
-                },
-                "cmpEnableMode": "all-cpus",
-                "cmpEnabled": "enabled",
-                "csMaxConnDur": 14319373760,
-                "csMeanConnDur": 7972,
-                "csMinConnDur": 56,
-                "destination": "any:any",
-                "ephemeral": {
-                    "bitsIn": 0,
-                    "bitsOut": 0,
-                    "curConns": 0,
-                    "maxConns": 0,
-                    "pktsIn": 0,
-                    "pktsOut": 0,
-                    "totConns": 0
-                },
-                "fiveMinAvgUsageRatio": 0,
-                "fiveSecAvgUsageRatio": 0,
-                "id": "VS-FORWARDING",
-                "name": "VS-FORWARDING",
-                "oneMinAvgUsageRatio": 0,
-                "status": {
-                    "availabilityState": "unknown",
-                    "enabledState": "enabled",
-                    "statusReason": "The children pool member(s) either don't have service checking enabled, or service check results are not available yet"
-                },
-                "syncookie": {
-                    "accepts": 0,
-                    "hwAccepts": 0,
-                    "hwSyncookies": 0,
-                    "hwsyncookieInstance": 0,
-                    "rejects": 2,
-                    "swsyncookieInstance": 0,
-                    "syncacheCurr": 0,
-                    "syncacheOver": 0,
-                    "syncookies": 0
-                },
-                "syncookieStatus": "not-activated",
-                "totRequests": 0
             }
         ]
     }
@@ -2660,8 +2524,8 @@ Use the following operations to view and manage monitors and monitor
 configuration in the load balancer.
 
 .. contents::
-	 :depth: 1
-	 :local:
+     :depth: 1
+     :local:
 
 Retrieve monitors
 -----------------
