@@ -731,7 +731,7 @@ Response
                 "linkQosToClient": "pass-through",
                 "linkQosToServer": "pass-through",
                 "loadBalancingMode": "round-robin",
-                "metadata": {},
+                "metadata": [],
                 "minActiveMembers": 0,
                 "minUpMembers": 0,
                 "minUpMembersAction": "failover",
@@ -746,7 +746,7 @@ Response
                 "slowRampTime": 10,
                 "description": null,
                 "members": {},
-                "monitors": {},
+                "monitorRule": {},
             }
         ]
     }
@@ -854,13 +854,13 @@ Retrieve the pool specified.
                 "linkQosToClient": "pass-through",
                 "linkQosToServer": "pass-through",
                 "loadBalancingMode": "round-robin",
-                "metadata": {},
+                "metadata": [],
                 "minActiveMembers": 0,
                 "minUpMembers": 0,
                 "minUpMembersAction": "failover",
                 "minUpMembersChecking": "disabled",
                 "partition": "Common",
-                "profiles": "none",
+                "profiles": null,
                 "queueDepthLimit": 0,
                 "queueOnConnectionLimit": "disabled",
                 "queueTimeLimit": 0,
@@ -869,7 +869,13 @@ Retrieve the pool specified.
                 "slowRampTime": 10,
                 "description": "none",
                 "members": {},
-                "monitors": {}
+                "monitor": {},
+                "monitorRule": {
+                    "minimum": 1,
+                    "names": [
+                        "tcp"
+                    ]
+                }
             }
         ]
     }
@@ -1113,43 +1119,46 @@ Response
          "data": [
             {
                "id": "test1:80",
+               "activeMemberCnt": 0,
                "address": "127.0.0.1",
                "connq": {
-               "ageEdm": 0,
-               "ageEma": 0,
-               "ageHead": 0,
-               "ageMax": 0,
-               "depth": 0,
-               "serviced": 0
-            },
+                   "ageEdm": 0,
+                   "ageEma": 0,
+                   "ageHead": 0,
+                   "ageMax": 0,
+                   "depth": 0,
+                   "serviced": 0
+                },
+               "connqAll": {
+                    "ageEdm": 0,
+                    "ageEma": 0,
+                    "ageHead": 0,
+                    "ageMax": 0,
+                    "depth": 0,
+                    "serviced": 0
+               },
                "curSessions": 0,
+               "minActiveMembers": 0,
                "monitorRule": {
-               "monitors": [
-               "default"
-               ],
-               "minimum": "all"
+                   "monitors": [
+                   "default"
+                   ],
+                   "minimum": "all"
                },
-               "monitorStatus": "unchecked",
-               "nodeName": "test1",
-               "poolName": "test2",
-               "port": {
-               "type": "equal",
-               "value": 80
-               },
+               "name": "test1:80",
                "serverside": {
-               "bitsIn": 0,
-               "bitsOut": 0,
-               "curConns": 0,
-               "maxConns": 0,
-               "pktsIn": 0,
-               "pktsOut": 0,
-               "totConns": 0
+                   "bitsIn": 0,
+                   "bitsOut": 0,
+                   "curConns": 0,
+                   "maxConns": 0,
+                   "pktsIn": 0,
+                   "pktsOut": 0,
+                   "totConns": 0
                },
-               "sessionStatus": "enabled",
                "status": {
-               "availabilityState": "unknown",
-               "enabledState": "enabled",
-               "statusReason": "Pool member does not have service checking enabled"
+                   "availabilityState": "unknown",
+                   "enabledState": "enabled",
+                   "statusReason": "Pool member does not have service checking enabled"
                },
                "totRequests": 0,
             }
@@ -1196,22 +1205,21 @@ Response
             "type": "equal",
             "value": 80
           },
-          "monitors": {},
+          "monitorRule": {},
           "address": "127.0.0.1",
-          "appService": "none",
+          "appService": null,
           "connectionLimit": 0,
           "description": "none",
           "dynamicRatio": 1,
           "inheritProfile": "enabled",
           "logging": "disabled",
-          "monitor": "default",
           "priorityGroup": 0,
           "rateLimit": "disabled",
           "ratio": 1,
           "session": "monitor-enabled",
-          "state": "down",
+          "state": "unchecked",
           "metadata": {},
-          "profiles": [],
+          "profiles": null,
         }
       ]
     }
@@ -1288,7 +1296,7 @@ Response
             ],
             "minimum": "all"
           },
-          "monitorStatus": "unchecked",
+          "monitorStatus": "address-down",
           "nodeName": "test1",
           "poolName": "test2",
           "port": {
@@ -1342,14 +1350,17 @@ Response
                 "dynamicRatio": 1,
                 "inheritProfile": "enabled",
                 "logging": "disabled",
-                "monitor": "default",
                 "priorityGroup": 0,
+                "port": {
+                    "type": "equal",
+                    "value": 70
+                },
                 "rateLimit": "disabled",
                 "ratio": 1,
-                "session": "monitor-enabled",
-                "state": "down",
+                "session": "user-enabled",
+                "state": "unchecked",
                 "metadata": {},
-                "monitors": {},
+                "monitorRule": {},
                 "profiles": []
             }
         ]
@@ -1446,7 +1457,9 @@ Response
       "data": [
         {
           "minimum": "all",
-          "address": "127.0.0.1",
+          "names": [
+                "default"
+          ]
         }
       ]
     }
@@ -1595,7 +1608,7 @@ Response
                     ],
                     "minimum": "all"
                 },
-                "monitorStatus": "unchecked",
+                "monitorStatus": "address-down",
                 "nodeName": "test1",
                 "poolName": "test2",
                 "port": {
@@ -2548,72 +2561,79 @@ Retrieve a list of monitors.
     {
         "data": [
             {
-                "id": "TestMonitor-DONT-DELETE",
+                "acceptRcode": "no-error",
+                "address": "any",
+                "answerContains": "query-type",
                 "appService": null,
-                "address" : "127.0.0.1",
-                "port": {
-                    "type": "equal",
-                    "value": 80
-                },
-                "defaultsFrom": "tcp",
+                "defaultsFrom": null,
                 "description": null,
+                "id": "dns",
                 "interval": 5,
-                "ipDscp": 0,
                 "manualResume": "disabled",
-                "recv": null,
-                "recvDisable": null,
-                "reverse": "disabled",
-                "send": null,
-                "timeUntilUp": 0,
-                "timeout": 16,
-                "transparent": "disabled",
-                "type": "tcp",
-                "upInterval": 0
-            },
-            {
-                "id": "MON-TCP-80",
-                "appService": null,
-                "address" : "127.0.0.1",
-                "port": {
-                    "type": "equal",
-                    "value": 80
-                },
-                "defaultsFrom": "tcp",
-                "description": null,
-                "interval": 5,
-                "ipDscp": 0,
-                "manualResume": "disabled",
-                "recv": null,
-                "recvDisable": null,
-                "reverse": "disabled",
-                "send": null,
-                "timeUntilUp": 0,
-                "timeout": 16,
-                "transparent": "disabled",
-                "type": "tcp",
-                "upInterval": 0
-            },
-            {
-                "id": "test-monitor",
-                "appService": null,
-                "address" : "127.0.0.1",
                 "port": {
                     "type": "any",
                     "value": "any"
                 },
-                "debug" : "enabled",
-                "defaultsFrom": "udp",
-                "description": null,
-                "interval": 5,
-                "manualResume": "disabled",
+                "qname": null,
+                "qtype": "a",
                 "recv": null,
-                "recvDisable": null,
                 "reverse": "disabled",
-                "send": "\"default send string\"",
                 "timeUntilUp": 0,
                 "timeout": 16,
                 "transparent": "disabled",
-                "type": "udp",
+                "type": "dns",
+                "upInterval": 0
+            },
+            {
+                "address": "any",
+                "appService": null,
+                "cert": null,
+                "cipherlist": null,
+                "compatibility": null,
+                "defaultsFrom": null,
+                "description": null,
+                "id": "https",
+                "interval": 5,
+                "ipDscp": 0,
+                "key": null,
+                "manualResume": "disabled",
+                "password": null,
+                "port": {
+                    "type": "any",
+                    "value": "any"
+                },
+                "recv": null,
+                "recvDisable": null,
+                "reverse": "disabled",
+                "send": "\"GET /\\r\\n\"",
+                "timeUntilUp": 0,
+                "timeout": 16,
+                "transparent": "disabled",
+                "type": "https",
+                "upInterval": 0,
+                "username": null
+            },
+            {
+                "address": "1.2.3.27",
+                "appService": null,
+                "defaultsFrom": "tcp",
+                "description": "\"Updated value\"",
+                "id": "FakeTestMonitor",
+                "interval": 5,
+                "ipDscp": 0,
+                "manualResume": "disabled",
+                "port": {
+                    "type": "equal",
+                    "value": 86
+                },
+                "recv": "stuff",
+                "recvDisable": "disabled",
+                "reverse": "disabled",
+                "send": null,
+                "timeUntilUp": 0,
+                "timeout": 16,
+                "transparent": "enabled",
+                "type": "tcp",
                 "upInterval": 0
             }
         ]
@@ -2647,17 +2667,16 @@ Retrieve details about a specified monitor.
                     "type": "equal",
                     "value": 80
                 },
-                "appService": "none",
+                "appService": null,
                 "defaultsFrom": "tcp",
                 "description": "none",
                 "interval": 5,
                 "ipDscp": 0,
                 "manualResume": "disabled",
-                "partition": "Common",
-                "recv": "none",
-                "recvDisable": "none",
+                "recv": null,
+                "recvDisable": null,
                 "reverse": "disabled",
-                "send": "none",
+                "send": null,
                 "timeUntilUp": 0,
                 "timeout": 16,
                 "transparent": "disabled",
