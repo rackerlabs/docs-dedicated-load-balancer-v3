@@ -17,92 +17,100 @@ Response
 ::
 
     {
-      "load_balancer_data": {
-        "customer": "2222222",
-        "uptime": "unimplemented",
-        "hostname": "adx1000-cyberdyne.iad3.netdev.net",
-        "ha_role": "high",
-        "ram_mem": [
-          {
-            "total_kbytes": "2097152",
-            "free_kbytes": "1339548",
-            "name": "MP",
-            "used_kbytes": "757604"
-          },
-          {
-            "total_kbytes": "458752",
-            "free_kbytes": "348964",
-            "name": "BP1",
-            "used_kbytes": "109788"
-          }
-        ],
-        "id": "111111",
-        "os_version": "12.4.00sT403",
-        "management_ip": "10.17.25.108",
+    "load_balancer_data": {
+        "id": "534584",
+        "customer": "222222",
+        "hostname": "adx1000-skynet.iad3.netdev.net",
+        "management_ip": "10.17.25.110",
+        "model_name": "SI-1216-4-PREM",
+        "os_version": "12.5.02gT403",
         "role": "unimplemented",
+        "uptime": "unimplemented",
         "cpu_load": [
-          {
-            "mod_name": "MASTER_CPU",
-            "load_5_sec_avg": {
-              "percent_load": 1,
-              "seconds_since": 5
+            {
+                "mod_name": "MASTER_CPU",
+                "average": {
+                    "percent_load": 1,
+                    "seconds_since": 7256
+                },
+                "last_peak_load": {
+                    "percent_load": 491,
+                    "seconds_since": 1
+                },
+                "load_1_sec_avg": {
+                    "percent_load": 491,
+                    "seconds_since": 1
+                },
+                "load_5_sec_avg": {
+                    "percent_load": 98,
+                    "seconds_since": 5
+                },
+                "load_60_sec_avg": {
+                    "percent_load": 9,
+                    "seconds_since": 60
+                },
+                "load_300_sec_avg": {
+                    "percent_load": 9,
+                    "seconds_since": 300
+                }
+            },
+            {
+                "mod_name": "ASB1/1",
+                "average": {
+                    "percent_load": -1,
+                    "seconds_since": -1
+                },
+                "last_peak_load": {
+                    "percent_load": 1,
+                    "seconds_since": 4
+                },
+                "load_1_sec_avg": {
+                    "percent_load": 1,
+                    "seconds_since": 1
+                },
+                "load_5_sec_avg": {
+                    "percent_load": 1,
+                    "seconds_since": 5
+                },
+                "load_60_sec_avg": {
+                    "percent_load": 1,
+                    "seconds_since": 60
+                },
+                "load_300_sec_avg": {
+                    "percent_load": 1,
+                    "seconds_since": 300
+                }
             }
-          },
-          {
-            "mod_name": "ASB1/1",
-            "load_5_sec_avg": {
-              "percent_load": 1,
-              "seconds_since": 5
-            }
-          },
-          {
-            "mod_name": "ASB1/2",
-            "load_5_sec_avg": {
-              "percent_load": 1,
-              "seconds_since": 5
-            }
-          },
-          {
-            "mod_name": "ASB1/3",
-            "load_5_sec_avg": {
-              "percent_load": 1,
-              "seconds_since": 5
-            }
-          },
-          {
-            "mod_name": "ASB1/4",
-            "load_5_sec_avg": {
-              "percent_load": 1,
-              "seconds_since": 5
-            }
-          }
         ],
-        "ha_status": "none",
-        "model_name": "SI-1216-4-PREM"
-      }
-    }
-
-Show high availability template
--------------------------------
-
-Retrieves the high availability configuration template for a device with
-the specified ID.
-
-::
-
-    GET /{device_id}/ha
-
-*This operation does not accept a request body.*
-
-GET 200 response
-^^^^^^^^^^^^^^^^
-
-Successfully processed the request.
-
-::
-
-    {
-      "message": "This is a test template for High Availability"
+        "ram_mem": [
+            {
+                "name": "MP",
+                "total_kbytes": "2097152",
+                "used_kbytes": "1058236",
+                "free_kbytes": "1038916"
+            },
+            {
+                "name": "BP1",
+                "total_kbytes": "456964",
+                "used_kbytes": "69504",
+                "free_kbytes": "387460"
+            },
+            {
+                "name": "BP2",
+                "total_kbytes": "456964",
+                "used_kbytes": "69304",
+                "free_kbytes": "387660"
+            },
+            {
+                "name": "BP3",
+                "total_kbytes": "456964",
+                "used_kbytes": "69372",
+                "free_kbytes": "387592"
+            }
+        ],
+        "ha_role": "none",
+        "ha_status": "none"
+        }
     }
 
 Retrieve virtual IPs configuration
@@ -124,51 +132,119 @@ Successfully processed the request.
 ::
 
     {
-      "vips": [
+    "load_balancer_data":[
         {
-          "protocol": "TCP",
-          "description": "",
-          "algorithm": {
-            "name": "LEAST_CONNECTION",
-            "persistence": null
-          },
-          "ip": "152.181.84.2",
-          "runtime_state": "UNHEALTHY",
-          "label": "Vip-Test-32fce25d",
-          "port_number": 80,
-          "port_name": "HTTP",
-          "admin_state": "ENABLED",
-          "stats": {
-            "conn_max": -1,
-            "pkts_out": -1,
-            "bytes_in": -1,
-            "pkts_in": 0,
-            "conn_tot": 0,
-            "conn_cur": 0,
-            "bytes_out": -1
-          },
-          "nodes": [
-            {
-              "label": "Node-Test-32fce25d",
-              "port_name": "HTTP",
-              "address": "29.181.84.2",
-              "port_number": 80,
-              "id": "Node-Test-32fce25d:29.181.84.2:80"
+            "id": "VIP-146.20.75.33:192.168.100.33:78",
+            "ip": "192.168.100.33",
+            "label": "VIP-146.20.75.33",
+            "description": "",
+            "algorithm": {
+                "name": "LEAST_CONNECTION",
+                "persistence": null
             },
-            {
-              "label": "Node-Test-8df4d3b7",
-              "port_name": "HTTP",
-              "address": "29.181.84.3",
-              "port_number": 80,
-              "id": "Node-Test-8df4d3b7:29.181.84.3:80"
-            }
-          ],
-          "id": "Vip-Test-32fce25d:152.181.84.2:80",
-          "vendor_extensions": {
-            "none": "none"
-          }
+            "port_name": "78",
+            "port_number": 78,
+            "protocol": "TCP",
+            "admin_state": "DISABLED",
+            "runtime_state": "UNHEALTHY",
+            "vendor_extensions": {
+                "none": "none"
+            },
+            "stats": {
+                "bytes_in": -1,
+                "bytes_out": -1,
+                "conn_cur": 0,
+                "conn_max": -1,
+                "conn_tot": 0,
+                "pkts_in": 0,
+                "pkts_out": -1
+            },
+            "nodes": [
+                {
+                    "id": "label_DCXQE:5.6.7.2:8560",
+                    "label": "label_DCXQE",
+                    "ip": "5.6.7.2",
+                    "port_name": "8560",
+                    "port_number": 8560
+                }
+            ]
+        },
+        {
+            "id": "Vip-Test-68f31107:247.226.98.2:80",
+            "ip": "247.226.98.2",
+            "label": "Vip-Test-68f31107",
+            "description": "",
+            "algorithm": {
+                "name": "LEAST_CONNECTION",
+                "persistence": null
+            },
+            "port_name": "HTTP",
+            "port_number": 80,
+            "protocol": "TCP",
+            "admin_state": "ENABLED",
+            "runtime_state": "UNHEALTHY",
+            "vendor_extensions": {
+                "none": "none"
+            },
+            "stats": {
+                "bytes_in": -1,
+                "bytes_out": -1,
+                "conn_cur": 0,
+                "conn_max": -1,
+                "conn_tot": 0,
+                "pkts_in": 0,
+                "pkts_out": -1
+            },
+            "nodes": [
+                {
+                    "id": "Node-Test-68f31107:124.226.98.2:80",
+                    "label": "Node-Test-68f31107",
+                    "ip": "124.226.98.2",
+                    "port_name": "HTTP",
+                    "port_number": 80
+                },
+                {
+                    "id": "Node-Test-8cb22fcb:124.226.98.4:80",
+                    "label": "Node-Test-8cb22fcb",
+                    "ip": "124.226.98.4",
+                    "port_name": "HTTP",
+                    "port_number": 80
+                }
+            ]
         }
-      ]
+        ]
+    }
+
+
+Retrieves event information by event ID.
+----------------------------------------
+
+Retrieve event information by event ID.
+
+::
+
+    GET /{device_id}/events/{event_id}
+
+*This operation does not accept a request body.*
+
+202 Response
+^^^^^^^^^^^^
+
+Successfully processed the request.
+
+::
+
+    {
+        "events": [
+            {
+                "event_id": "af4d0e44-d3e5-4ab2-9d93-a809ad38e3eb",
+                "message": "COMPLETED",
+                "entrytimestamp": "2020-11-02T08:02:46.291000",
+                "modifiedtimestamp": "2020-11-02T08:02:47.643000",
+                "status": 200,
+                "@type": "Event"
+            }
+        ]
     }
 
 
@@ -184,20 +260,28 @@ Add a virtual server configuration to the load balancer.
 Request
 ^^^^^^^
 
+account number, port_name, description and comment are optional.
+
+persistence is moved under algorithm and is an enabled/disabled field.
+
+port is an alias for port_number.
+
 ::
 
     {
-      "account_number": req"<Account Number>",
+      "account_number": "<Account Number>",
       "label": req"<Label>",
       "description": "<description>",
       "ip": "<ip>",
       "protocol": req"<protocol>",
       "port": req"<port>",
-      "algorithm": req{},
-      "persistence": req{},
-      "nodes": {},
+      "algorithm": req{
+                        "name": "<name>",
+                        "persistence":req"<enabled|disabled>"
+                       },
+      "nodes": [],
       "admin_state": req"<enabled|disabled>",
-      "comment": req"comment"
+      "comment": "comment"
     }
 
 Response
@@ -208,13 +292,14 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-10-30 10:23:37.091993",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534583/events/4c2de8ef-efc8-42f2-ab3c-411b92ff01f7",
+        "id": "4c2de8ef-efc8-42f2-ab3c-411b92ff01f7"
     }
+
 
 Retrieve virtual IP information
 -------------------------------
@@ -240,44 +325,49 @@ Successfully processed the request.
 ::
 
     {
-      "load_balancer_data": {
-        "protocol": "TCP",
-        "description": "Some description",
-        "algorithm": {
-          "persistence_method": "client_ip",
-          "name": "LEAST_CONNECTION",
-          "persistence": "ENABLED",
-          "subnet_prefix_length": 0
-        },
-        "ip": "152.181.84.2",
-        "runtime_state": "UNHEALTHY",
-        "label": "Vip-Test-32fce25d",
-        "port_number": 80,
-        "port_name": "HTTP",
-        "admin_state": "ENABLED",
-        "stats": {
-          "conn_max": -1,
-          "pkts_out": -1,
-          "bytes_in": -1,
-          "pkts_in": 0,
-          "conn_tot": 0,
-          "conn_cur": 0,
-          "bytes_out": -1
-        },
-        "nodes": [
-          {
-            "label": "Node-Test-32fce25d",
+        "load_balancer_data": {
+            "stats": {
+                "conn_max": -1,
+                "pkts_out": -1,
+                "bytes_in": -1,
+                "pkts_in": 0,
+                "conn_tot": 0,
+                "conn_cur": 0,
+                "bytes_out": -1
+            },
+            "protocol": "TCP",
+            "description": "Some description",
+            "algorithm": {
+                "name": "LEAST_CONNECTION",
+                "persistence": "DISABLED"
+            },
+            "ip": "247.226.98.2",
+            "runtime_state": "UNHEALTHY",
+            "label": "Vip-Test-68f31107",
             "port_name": "HTTP",
-            "address": "29.181.84.2",
+            "admin_state": "ENABLED",
             "port_number": 80,
-            "id": "Node-Test-32fce25d:29.181.84.2:80"
-          }
-        ],
-        "id": "Vip-Test-32fce25d:152.181.84.2:80",
-        "vendor_extensions": {
-          "none": "none"
+            "nodes": [
+                {
+                    "ip": "124.226.98.2",
+                    "label": "Node-Test-68f31107",
+                    "port_name": "HTTP",
+                    "port_number": 80,
+                    "id": "Node-Test-68f31107:124.226.98.2:80"
+                },
+                {
+                    "ip": "124.226.98.4",
+                    "label": "Node-Test-8cb22fcb",
+                    "port_name": "HTTP",
+                    "port_number": 80,
+                    "id": "Node-Test-8cb22fcb:124.226.98.4:80"
+                }
+            ],
+            "id": "Vip-Test-68f31107:247.226.98.2:80",
+            "vendor_extensions": {
+                "none": "none"
+            }
         }
-      }
     }
 
 Update virtual IP information
@@ -298,20 +388,29 @@ virtual IPs configuration operation to find it.
 Request body
 ^^^^^^^^^^^^
 
+account number, port_name, description and comment are optional.
+
+persistence is moved under algorithm and is an enabled/disabled field.
+
+port is an alias for port_number.
+
+
 ::
 
     {
-      "account_number": req"<Account Number>",
+      "account_number": "<Account Number>",
       "label": req"<Label>",
       "description": "<description>",
       "ip": "<ip>",
-      "protocol": req"<protocol>",
-      "port": req"<port>",
-      "algorithm": req{},
-      "persistence": req{},
-      "nodes": {},
-      "admin_state": req"<enabled|disabled>",
-      "comment": req"comment"
+      "protocol": "<protocol>",
+      "port": "<port>",
+      "algorithm": {
+                        "name": "<name>",
+                        "persistence":req"<enabled|disabled>"
+                       },
+      "nodes": [],
+      "admin_state": "<enabled|disabled>",
+      "comment": "comment"
     }
 
 PUT Virtual IPs information 202 response
@@ -322,12 +421,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-10-30 11:23:24.125076",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534583/events/cec678b8-d293-48a7-b1a0-05e07063de3f",
+        "id": "cec678b8-d293-48a7-b1a0-05e07063de3f"
     }
 
 Delete a virtual IP
@@ -339,15 +438,14 @@ configuration.
 If you don't know the ID for a specified virtual IP, use the retrieve
 virtual IPs operation to find it.
 
-The following fields are required for the delete operation:
-``account_number``, ``comment*``.
+.. note:: Request Body is optional for the delete operation.
 
 ::
 
     DELETE /{device_id}/vips/{vip_id}
 
-Request body
-^^^^^^^^^^^^
+Request body (Optional)
+^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
     {
@@ -363,12 +461,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-10-30 11:35:34.315166",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534583/events/40245aa0-334f-4841-987f-e0e88715ab97",
+        "id": "40245aa0-334f-4841-987f-e0e88715ab97"
     }
 
 List nodes for the specified virtual IP
@@ -390,16 +488,50 @@ Successfully processed the request.
 
 ::
 
-    {
-      "load_balancer_data": [
         {
-          "label": "Node-Test-32fce25d",
-          "port_name": "HTTP",
-          "address": "29.181.84.2",
-          "port_number": 80,
-          "id": "Node-Test-32fce25d:29.181.84.2:80"
+        "load_balancer_data": {
+            "stats": {
+                "conn_max": -1,
+                "pkts_out": -1,
+                "bytes_in": -1,
+                "pkts_in": 0,
+                "conn_tot": 0,
+                "conn_cur": 0,
+                "bytes_out": -1
+            },
+            "protocol": "TCP",
+            "description": "Some description",
+            "algorithm": {
+                "name": "LEAST_CONNECTION",
+                "persistence": "DISABLED"
+            },
+            "ip": "247.226.98.2",
+            "runtime_state": "UNHEALTHY",
+            "label": "Vip-Test-68f31107",
+            "port_name": "HTTP",
+            "admin_state": "ENABLED",
+            "port_number": 80,
+            "nodes": [
+                {
+                    "ip": "124.226.98.2",
+                    "label": "Node-Test-68f31107",
+                    "port_name": "HTTP",
+                    "port_number": 80,
+                    "id": "Node-Test-68f31107:124.226.98.2:80"
+                },
+                {
+                    "ip": "124.226.98.4",
+                    "label": "Node-Test-8cb22fcb",
+                    "port_name": "HTTP",
+                    "port_number": 80,
+                    "id": "Node-Test-8cb22fcb:124.226.98.4:80"
+                }
+            ],
+            "id": "Vip-Test-68f31107:247.226.98.2:80",
+            "vendor_extensions": {
+                "none": "none"
+            }
         }
-      ]
     }
 
 Assign node to virtual IP
@@ -415,9 +547,20 @@ account\_number.*
 
     POST /{device_id}/vips/{vip_id}/nodes/{node_id}
 
-
 Request body
 ^^^^^^^^^^^^
+::
+
+    {
+      "node_id": "<Node Id>"
+    }
+
+
+OR
+^^
+
+Request body for Backward Compatibility
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
     {
@@ -432,12 +575,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 07:58:55.506927",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/aa0cc2b2-676b-4d7e-a467-b4224150f279",
+        "id": "aa0cc2b2-676b-4d7e-a467-b4224150f279"
     }
 
 Remove node from virtual IP configuration
@@ -459,12 +602,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 08:03:23.942368",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/5498a757-cd34-48a6-b552-05342d85a31d",
+        "id": "5498a757-cd34-48a6-b552-05342d85a31d"
     }
 
 Enable a virtual IP
@@ -482,23 +625,34 @@ Request body
 ::
 
   {
+      "admin_state": "ENABLED"
+  }
+
+OR
+^^
+
+Request body
+^^^^^^^^^^^^
+::
+
+  {
     "account_number": "<Account Number> (required)"
   }
 
-202 Response
-^^^^^^^^^^^^
+Response
+^^^^^^^^
 
 The request has been accepted for processing.
 
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 08:05:09.683313",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/c91e5a6c-8eed-4919-8014-7188580557e0",
+        "id": "c91e5a6c-8eed-4919-8014-7188580557e0"
     }
 
 Disable a virtual IP
@@ -509,13 +663,15 @@ virtual IP configured for a specified device.
 
 .. note:: When using this feature to set drain connections to a VIP, you must monitor the VIP stats for connection details. See `Show virtual IP statistics`_ for more.
 
+.. note:: Request Body is optional for the delete operation.
+
 ::
 
     DELETE /{device_id}/vips/{vip_id}/configuration
 
 
-Request body
-^^^^^^^^^^^^
+Request body Optional
+^^^^^^^^^^^^^^^^^^^^^
 ::
 
   {
@@ -530,12 +686,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 08:14:07.461543",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/17666f2a-26f9-4c1e-97ec-d659848a4ddf",
+        "id": "17666f2a-26f9-4c1e-97ec-d659848a4ddf"
     }
 
 Show virtual IP statistics
@@ -556,16 +712,41 @@ Successfully processed the request.
 
 ::
 
-    {
-        "load_balancer_data": {
-            "conn_max": -1,
-            "pkts_out": -1,
+        {
+        "id": "Vip-Test-68f31107:247.226.98.2:80",
+        "ip": "222.222.22.2",
+        "label": "Vip-Test-68f31107",
+        "description": "Some description",
+        "algorithm": {
+            "name": "LEAST_CONNECTION",
+            "persistence": "DISABLED"
+        },
+        "port_name": "HTTP",
+        "port_number": 80,
+        "protocol": "TCP",
+        "admin_state": "ENABLED",
+        "runtime_state": "UNHEALTHY",
+        "vendor_extensions": {
+            "none": "none"
+        },
+        "stats": {
             "bytes_in": -1,
-            "pkts_in": 0,
-            "conn_tot": 0,
+            "bytes_out": -1,
             "conn_cur": 0,
-            "bytes_out": -1
-        }
+            "conn_max": -1,
+            "conn_tot": 0,
+            "pkts_in": 0,
+            "pkts_out": -1
+        },
+        "nodes": [
+            {
+                "id": "Node-Test-68f31107:124.226.98.2:80",
+                "label": "Node-Test-68f31107",
+                "ip": "124.226.98.2",
+                "port_name": "HTTP",
+                "port_number": 80
+            }
+        ]
     }
 
 
@@ -593,26 +774,44 @@ Successfully processed the request.
 ::
 
     {
-      "load_balancer_data": [
-        {
-          "stats": {
-            "conn_max": 0,
-            "pkts_out": 0,
-            "bytes_in": 0,
-            "pkts_in": 0,
-            "conn_tot": 0,
-            "conn_cur": 0,
-            "bytes_out": 0
-          },
-          "runtime_state": "UNHEALTHY",
-          "label": "Node-Test-c4b3b8a5",
-          "port_name": "12345",
-          "admin_state": "ENABLED",
-          "address": "29.235.243.3",
-          "port_number": 12345,
-          "id": "Node-Test-c4b3b8a5:29.235.243.3:12345"
-        }
-      ]
+        "load_balancer_data": [
+            {
+                "id": "Node-Test-68f31107:124.226.98.2:80",
+                "label": "Node-Test-68f31107",
+                "ip": "124.226.98.2",
+                "port_name": "HTTP",
+                "port_number": 80,
+                "admin_state": "ENABLED",
+                "runtime_state": "HEALTHY",
+                "stats": {
+                    "bytes_in": 0,
+                    "bytes_out": 0,
+                    "conn_cur": 0,
+                    "conn_max": 0,
+                    "conn_tot": 0,
+                    "pkts_in": 0,
+                    "pkts_out": 0
+                }
+            },
+            {
+                "id": "Configuration-testNode:5.6.7.111:8560",
+                "label": "Configuration-testNode",
+                "ip": "5.6.7.111",
+                "port_name": "8560",
+                "port_number": 8560,
+                "admin_state": "ENABLED",
+                "runtime_state": "UNHEALTHY",
+                "stats": {
+                    "bytes_in": 0,
+                    "bytes_out": 0,
+                    "conn_cur": 0,
+                    "conn_max": 0,
+                    "conn_tot": 0,
+                    "pkts_in": 0,
+                    "pkts_out": 0
+                }
+            }
+       ]
     }
 
 
@@ -622,8 +821,8 @@ Add a node to a device
 Use the nodes operations to add a node for a specified device
 
 When adding a node to a device, the following fields are required:
-``account_number``, ``label``, ``ip``, ``port``, ``admin_state``,
-``health_strategy``, ``vendor_extensions``, ``comment*``
+``label``, ``ip``, ``port``, ``admin_state``,
+``health_strategy``, ``vendor_extensions``
 
 ::
 
@@ -635,7 +834,7 @@ Request body
 ::
 
     {
-      "account_number": "<Account Number> (required)",
+      "account_number": "<Account Number> ",
       "label": "<Node Label> (required)",
       "description": "<description>",
       "ip": "<ip> (required)",
@@ -643,7 +842,7 @@ Request body
       "admin_state": "<enabled|disabled> (required)",
       "health_strategy": "<health_strategy JSON Object> (required)",
       "vendor_extensions": "<vendor_extension JSON object> (required)",
-      "comment": "comment (required)"
+      "comment": "comment"
     }
 
 202 Response
@@ -654,12 +853,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 08:19:48.702127",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/91c49e38-3989-4836-a6ab-e7043285dfc7",
+        "id": "91c49e38-3989-4836-a6ab-e7043285dfc7"
     }
 
 Retrieve node information
@@ -681,42 +880,35 @@ Successfully processed the request.
 ::
 
     {
-      "load_balancer_data": {
-        "protocol": "TCP",
-        "description": null,
-        "runtime_state": "UNHEALTHY",
-        "label": "Node-Test-c4b3b8a5",
-        "port_name": "12345",
-        "port_number": 12345,
-        "limit": 1000,
-        "admin_state": "ENABLED",
-        "address": "29.235.243.3",
-        "stats": {
-          "conn_max": 0,
-          "pkts_out": 0,
-          "bytes_in": 0,
-          "pkts_in": 0,
-          "conn_tot": 0,
-          "conn_cur": 0,
-          "bytes_out": 0
-        },
-        "id": "Node-Test-c4b3b8a5:29.235.243.3:12345",
-        "vendor_extensions": {
-          "reassign_count": 0
-        },
-        "health_strategy": {
-          "http_body_pattern": null,
-          "http_codes_ok": [
-            200,
-            203
-          ],
-          "ssl": false,
-          "port_number": 12345,
-          "path": "/",
-          "strategy": "HTTP_RES_CODE",
-          "method": "GET"
+        "load_balancer_data": {
+            "id": "RdcTestNode6:10.14.15.12:75",
+            "label": "RdcTestNode6",
+            "ip": "22.22.22.22",
+            "description": null,
+            "port_name": "75",
+            "port_number": 75,
+            "weight": -1,
+            "protocol": "BOTH",
+            "health_strategy": {
+                "strategy": "TCP_PORT",
+                "port_number": 75
+            },
+            "limit": -1,
+            "admin_state": "ENABLED",
+            "runtime_state": "UNHEALTHY",
+            "vendor_extensions": {
+                "reassign_count": 0
+            },
+            "stats": {
+                "bytes_in": 0,
+                "bytes_out": 0,
+                "conn_cur": 0,
+                "conn_max": 0,
+                "conn_tot": 0,
+                "pkts_in": 0,
+                "pkts_out": 0
+            }
         }
-      }
     }
 
 
@@ -736,14 +928,14 @@ Request body
 ::
 
     {
-      "account_number": "<Account Number> (required)",
+      "account_number": "<Account Number>",
       "ip": "<ip>",
       "port": "<port>",
       "label": "<Node Label>",
       "health_strategy": {},
       "admin_state": "<enabled|disabled>"
       "vendor_extensions": {},
-      "comment": "<comment> (required)"
+      "comment": "<comment>"
     }
 
 202 Response
@@ -754,12 +946,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 08:22:57.435683",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/b1958d4d-d1f8-4e26-a53d-c19d5b6065e2",
+        "id": "b1958d4d-d1f8-4e26-a53d-c19d5b6065e2"
     }
 
 Delete node from the device configuration
@@ -767,12 +959,14 @@ Delete node from the device configuration
 
 Use the node operations to remove a specified node.
 
+.. note:: Request Body is optional for the delete operation.
+
 ::
 
     DELETE /{device_id}/nodes/{node_id}
 
-Request body
-^^^^^^^^^^^^
+Request body Optional
+^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -812,6 +1006,17 @@ Request body
 ::
 
   {
+      "admin_state": "ENABLED"
+  }
+
+OR
+^^
+
+Request body for Backward Compatibilty
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+  {
     "account_number": "<Account Number> (required)"
   }
 
@@ -823,12 +1028,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 08:09:00.586497",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/fc0b7a0a-b29a-48fe-b328-96710ed15dd9",
+        "id": "fc0b7a0a-b29a-48fe-b328-96710ed15dd9"
     }
 
 Disable a node
@@ -839,9 +1044,14 @@ included in the device configuration.
 
 
 .. note:: When using this feature to set drain connections to a node (e.g. during a maintenance), you must monitor the node stats for connection details. See `Show node statistics`_ for more.
+.. note:: Request Body is optional for the delete operation.
 
-Request body
-^^^^^^^^^^^^
+::
+
+    DELETE /{device_id}/nodes/{node_id}/configuration
+
+Request body Optional
+^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -849,11 +1059,7 @@ Request body
     "account_number": "<Account Number> (required)"
   }
 
-::
 
-    DELETE /{device_id}/nodes/{node_id}/configuration
-
-*This operation does not accept a request body.*
 
 
 202 Response
@@ -864,12 +1070,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-02 08:29:48.221513",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/69db15c1-88bc-4ad2-bdc4-f1a1f4f0e82b",
+        "id": "69db15c1-88bc-4ad2-bdc4-f1a1f4f0e82b"
     }
 
 Show node statistics
@@ -891,87 +1097,71 @@ Successfully processed the request.
 ::
 
     {
-      "load_balancer_data": {
-        "conn_max": 0,
-        "pkts_out": 0,
-        "bytes_in": 0,
-        "pkts_in": 0,
-        "conn_tot": 0,
-        "conn_cur": 0,
-        "bytes_out": 0
-      }
+        "load_balancer_data": {
+            "id": "RdcTestNode6:10.14.15.12:75",
+            "label": "RdcTestNode6",
+            "ip": "10.14.15.12",
+            "description": null,
+            "port_name": "75",
+            "port_number": 75,
+            "weight": -1,
+            "protocol": "BOTH",
+            "health_strategy": {
+                "strategy": "TCP_PORT",
+                "port_number": 75
+            },
+            "limit": -1,
+            "admin_state": "ENABLED",
+            "runtime_state": "UNHEALTHY",
+            "vendor_extensions": {
+                "reassign_count": 0
+            },
+            "stats": {
+                "bytes_in": 0,
+                "bytes_out": 0,
+                "conn_cur": 0,
+                "conn_max": 0,
+                "conn_tot": 0,
+                "pkts_in": 0,
+                "pkts_out": 0
+            }
+        }
     }
 
-List events
------------
 
-Retrieve all event information for a device
+
+Depricated Api
+--------------
+
+Show high availability template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    GET /{device_id}/ha
+
+List events
+^^^^^^^^^^^
 
 ::
 
     GET /{device_id}/events
 
-*This operation does not accept a request body.*
 
-Response
-^^^^^^^^^
+Deprecated Api
+--------------
 
-Successfully processed the request.
-
-::
-
-    {
-      "data": [
-        {
-          "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-          "@type": "Event",
-          "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-          "status": "200",
-          "message": "Processing",
-          "timestamp": "2015-04-01T10:05:01.55Z",
-        },
-        {
-          "@id": "/loadbalancers/0a68f7c8-e2f9-11e4-8a00-1681e6b88ec1",
-          "@type": "Event",
-          "event_id": "0a68f7c8-e2f9-11e4-8a00-1681e6b88ec1",
-          "status": "202",
-          "message": "Accepted",
-          "timestamp": "2015-04-01T11:17:05.45Z",
-        },
-        {
-          "@id": "/loadbalancers/104e8b58-e2f9-11e4-8a00-1681e6b88ec1",
-          "@type": "Event",
-          "event_id": "104e8b58-e2f9-11e4-8a00-1681e6b88ec1",
-          "status": "201",
-          "message": "Created",
-          "timestamp": "2015-04-01T19:15:01.3Z",
-        }
-      ]
-    }
-
-Retrieves event information by event ID.
-----------------------------------------
-
-Retrieve event information by event ID.
+Show high availability template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-    GET /{device_id}/events/{event_id}
+    GET /{device_id}/ha
 
-*This operation does not accept a request body.*
-
-202 Response
-^^^^^^^^^^^^
-
-Successfully processed the request.
+List events
+^^^^^^^^^^^
 
 ::
 
-    {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
-    }
+    GET /{device_id}/events
+
