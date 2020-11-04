@@ -34,7 +34,7 @@ get the node ID assigned to the device.
       | python -m json.tool
 
 
-A successful request returns an HTTP 200 response header followed by detailed
+A successful request returns an `HTTP 200` response header followed by detailed
 load balancer information. The API also returns an
 event ID associated with the create operation that you can use to check the
 status.
@@ -129,7 +129,7 @@ Retrieve all nodes
 ~~~~~~~~~~~~~~~~~~
 
 The following example shows how to view information about all the nodes
-configured in the load balancer.
+configured in the load balancer:
 
 **Example: cURL Retrieve all nodes request**
 
@@ -202,8 +202,8 @@ configured in the load balancer.
 Add monitor for a node
 ----------------------
 
-The following example adds a TCP monitor rule for port 80
-to the node ``NODE-192.168.10.10``.
+The following example adds a TCP monitor rule for port `80`
+to the node ``NODE-192.168.10.10``:
 
 **Example: Add monitor rule to a node cURL request**
 
