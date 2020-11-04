@@ -6,7 +6,7 @@ of a node, pool, or group of nodes in a pool. You must add the monitor to
 the load balancer configuration before you can apply it to a load balancer
 component.
 
-The following example retrieves the monitors configured in the load balancer.
+The following example retrieves the monitors configured in the load balancer:
 
 **Example: Retrieve monitoring configuration cURL request**
 
@@ -98,8 +98,8 @@ The following example retrieves the monitors configured in the load balancer.
 
 Retrieve monitoring configuration by ID
 ---------------------------------------
-To retrieve the configuration for a specific monitor, submit a request with
-that includes the monitor ID as shown in the following example.
+To retrieve the configuration for a specific monitor, submit a request
+that includes the monitor ID, as shown in the following example:
 
 **Example: Retrieve list of monitors cURL request**
 
@@ -151,8 +151,8 @@ Create a monitor in the load balancer
 -------------------------------------
 
 When you add a monitor, include the monitor ID in the URI. Then, pass the
-monitor parameter values in the body of the request as shown in the
-following example.
+monitor parameter values in the body of the request, as shown in the
+following example:
 
 **Example: Create a monitor cURL request**
 
@@ -209,7 +209,7 @@ Update monitor
 --------------
 
 After you add a monitor to the load balancer, you can update the monitor
-configuration as shown in the following example.
+configuration, as shown in the following example:
 
 **Example: Update a monitor cURL request**
 
@@ -275,9 +275,9 @@ included in the response.
 Delete monitor by ID
 --------------------
 
-When you delete a monitor, it will be removed from the load balancer
-configuration. If the monitor has been applied to a load balancer component,
-it will also be removed from that component.
+When you delete a monitor, the operation removes it from the load balancer
+configuration. If you applied the monitor to a load balancer component,
+the operation also removes it from that component.
 
 **Delete monitor rule cURL request**
 
