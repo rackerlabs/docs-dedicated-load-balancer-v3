@@ -8,10 +8,10 @@ Rackspace |product name| API |contract version|
 
 The |product name| service enables developers to programmatically view and
 manage their existing dedicated hardware load balancer resources such as
-virtual IPs (vips), nodes and health checks. You cannot use the API to
+virtual IPs (vips), nodes, and health checks. You cannot use the API to
 provision dedicated hardware load balancers.
 
-You can use the |apiservice| to manage the following load balancer models.
+You can use the |apiservice| to manage the following load balancer models:
 
  - |F5Product|
 
@@ -29,7 +29,7 @@ For details about using these load balancer models for hybrid hosting, see
 
    The |product name| provides direct access to the |F5Product| and
    |ADXProduct| device hardware. When you submit an API request
-   to add, update, or remove configuration settings the changes are applied
+   to add, update, or remove configuration settings, the changes are applied
    to the device as soon as the request completes successfully.
    Make sure you understand the impact of an API request before you submit it.
 
@@ -49,8 +49,8 @@ also be familiar with the following technologies:
 - HTTP/1.1
 - JSON serialization formats
 
-Use the following links to jump direct to user and reference information for
-using the |product name| service REST API:
+Use the following links to jump direct to documentation about
+the |product name| service REST API:
 
 * :ref:`Getting started<getting-started-intro>`
 * :ref:`F5 Big-IP load balancer API Reference<f5-api-reference>`
