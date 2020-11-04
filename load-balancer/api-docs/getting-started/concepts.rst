@@ -23,22 +23,22 @@ Virtual server
 ~~~~~~~~~~~~~~
 
 A virtual server is an IP address (virtual IP) and service port combination,
-for example ``172.16.200.210:80``. A virtual server's main function is to
-distribute traffic loads to a group of internal, back-end servers. All traffic
-is directed to the virtual server, and the server distributes the traffic
+such as ``172.16.200.210:80``. A virtual server's main function is to
+distribute traffic loads to a group of internal, back-end servers. The load balancer 
+directs all traffic to the virtual server, and the server distributes the traffic
 across the backend devices.
 
-Virtual servers are configured differently on |ADX| and |F5| devices.
+YOu configure virtual servers differently on |ADX| and |F5| devices.
 
 |ADX| virtual server configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On an |ADX|, virtual servers are defined explicitly by binding
+On an |ADX|, you define virtual servers explicitly by binding
 virtual servers with real server resources. A real
 server is a configuration object that exists within the ADX that defines the
 IP address of the internal, back-end server. You associate server resources
 with a virtual server using the virtual server binding syntax as shown in
-the following example.
+the following example:
 
 .. list-table:: **Brocade ADX load balancer configuration**
    :widths: 20 50
@@ -84,13 +84,13 @@ traffic.
    * -     Member 3
      -     10.200.10.27:80
 
-After a pool is applied to a virtual server, client traffic that is destined
-for the virtual server uses the pool as its resource. In order for a pool to
+After you apply a pool to a virtual server, client traffic that is destined
+for the virtual server uses the pool as its resource. For a pool to
 serve its function of fault tolerance and redundancy, multiple pool members
-are required to be available inside the pool. When a pool has multiple
+must be available inside the pool. When a pool has multiple
 members, the load balancer decides which one receives the client traffic based
 on the load balancing method configured on the device (Round Robin, Weighted
-Robin, Least Connection).
+Robin, Least Connection, and so on).
 
 
 .. _pools-concept:
@@ -134,8 +134,8 @@ In an |F5|, a node is added automatically when you add a member to a pool.
 Event
 ~~~~~
 
-Events are used to track asynchronous backend processing status. These events 
-are generated when a user performs an action on the load balancer device that 
+Events track asynchronous backend processing status. The system generates these events 
+when a user performs an action on the load balancer device that 
 updates the device. An event ID is returned as part of the response object, 
 which also includes an event type, status of the request, and a timestamp when 
 the event was created.
@@ -161,5 +161,5 @@ a pool, or a pool member. You apply it by submitting an API request to
 create a monitor rule. After applying a rule, you can use the update monitor
 rule operations to change configuration settings.
 
-On the |F5|, the default interval timer is 5 seconds, with a default timeout
-value of 16 seconds.
+On the |F5|, the default interval timer is `5` seconds, with a default timeout
+value of `16` seconds.
