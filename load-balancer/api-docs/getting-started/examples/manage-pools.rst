@@ -9,8 +9,7 @@ You use the Pools operations described in :ref:`F5 BigIP API<f5-api-reference>`
 to add, configure, and update pools and pool members. You can also view
 statistics and configure monitor rules for pools and pool members.
 
-To use a pool for load balancing, you need to associate it with a
-Manage virtual servers`.
+To use a pool for load balancing, you need to associate it with a virtual server.
 
 
 Retrieve details for pools
@@ -21,8 +20,8 @@ pools configured in the load balancer.
 
 The response includes links that you can use to retrieve
 additional information about the pools configuration.
-For example, use the self link to retrieve information about a specific pool,
-and use the members link to retrieve information about
+For example, use the **self** link to retrieve information about a specific pool,
+and use the **members** link to retrieve information about
 the backend devices that the virtual server uses to manage the load balancer
 workloads.
 
@@ -36,7 +35,7 @@ workloads.
        | python -m json.tool
 
 
-If the request is successful, you see an HTTP 200 response header
+If the request is successful, you see an `HTTP 200` response header
 followed by information about each pool configured in the load balancer.
 
 **Example: Retrieve pools in load balancer response**
@@ -341,7 +340,7 @@ The following example updates the pool
        }
    }
 
-To review the results,:ref:`submit an event request <retrieve-event-info>`
+To review the results, :ref:`submit an event request <retrieve-event-info>`
 with the event ID included in the response to the update monitor rule
 operation.
 
@@ -411,7 +410,7 @@ You can create a pool member by adding an existing node to a pool. To add
 a node, use the :ref:`add a node <add-a-node-to-lb>` operation.
 
 The following example adds a backend device with
-node ID *VM-321370* to the *POOL-TEST* pool.
+node ID *VM-321370* to the *POOL-TEST* pool:
 
 **Example: Add a pool member cURL request**
 
@@ -541,7 +540,7 @@ When you update the monitor rule for a pool member, the operation
 replaces any existing rule.
 
 The following example updates the pool
-*POOL-TEST* to add the *MON-TCP-80* rule.
+*POOL-TEST* to add the *MON-TCP-80* rule:
 
 **Example: Update the pool member monitor rule cURL request**
 
