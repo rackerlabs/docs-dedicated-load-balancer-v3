@@ -8,7 +8,7 @@ Rackspace |product name| API |contract version|
 
 The |product name| service enables developers to programmatically view and
 manage their existing dedicated hardware load balancer resources such as
-virtual IPs (vips), nodes, and health checks. You cannot use the API to
+virtual IPs (VIPs), nodes, and health checks. You cannot use the API to
 provision dedicated hardware load balancers.
 
 You can use the |apiservice| to manage the following load balancer models:
