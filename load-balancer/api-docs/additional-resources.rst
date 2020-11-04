@@ -4,19 +4,16 @@
 Additional resources
 ====================
 
-We welcome feedback, comments, and bug reports. Visit the Rackspace customer
-portal  at https://feedback.rackspace.com/. Contact your Rackspace Support team 
+We welcome feedback, comments, and bug reports. Contact your Rackspace Support team 
 for additional assistance.
 
-The `Rackspace website <http://support.rackspace.com>`_ offers information
-about Rackspace Cloud and Hybrid products,  links to official Rackspace support
-channels, including knowledge base articles,  forums, phone, chat, and email.
+The `Rackspace How-To`_ offers information about Rackspace Cloud and Hybrid products and links
+to official Rackspace support channels, including How-To articles, phone, chat, and email resources.
 
-Use the links below to learn more about using the |product name| service and
+Use the following links to learn more about using the |product name| service and
 API.
 
-- For general information about |product name|, see the FAQ.
-  in the Rackspace Knowledge Center.
+- For general information about |product name|, see the FAQ in the `Rackspace How-To`_.
 
 - To get information about other Rackspace Cloud services APIs, see the
   `Rackspace API Documentation`_.
@@ -35,3 +32,5 @@ API.
 .. _on Twitter: http://www.twitter.com/rackspace
 
 .. _standard HTTP 1.1 response codes: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+
+.. _Rackspace How-To: https://docs.rackspace.com/support/how-to
