@@ -261,11 +261,11 @@ Add a virtual server configuration to the load balancer.
 Request
 ^^^^^^^
 
-The **account number**, **port_name**, **description**, and **comment** parameters are optional.
+The ``account number``, ``port_name``, ``description``, and ``comment`` parameters are optional.
 
-You can find **persistence** in the **algorithm** section, and it is an `enabled` or `disabled` field.
+You can find ``persistence`` in the ``algorithm`` section, and it is an `enabled` or `disabled` field.
 
-**port** is an alias for **port_number**.
+``port`` is an alias for ``port_number``.
 
 ::
 
@@ -387,11 +387,11 @@ virtual IPs** configuration operation to find it.
 Request body
 ^^^^^^^^^^^^
 
-The **account number**, **port_name**, **description**, and **comment** parameters are optional.
+The ``account number``, ``port_name``, ``description``, and ``comment`` parameters are optional.
 
-You can find **persistence** in the **algorithm** section, and it is an `enabled` or `disabled` field.
+You can find ``persistence`` in the ``algorithm`` section, and it is an `enabled` or `disabled` field.
 
-**port** is an alias for **port_number**.
+``port`` is an alias for ``port_number``.
 
 
 ::
@@ -540,7 +540,7 @@ Use this operation to add a
 specified node from the virtual IP configuration.
 
 *When you assign a node to a virtual IP, the following field is required:
-**account\_number**.*
+``account\_number``.*
 
 ::
 
@@ -821,8 +821,8 @@ Add a node to a device
 Use this operation to add a node to a specified device.
 
 When adding a node to a device, the following fields are required:
-**label**, **ip**, **port**, **admin_state**,
-**health_strategy**, and **vendor_extensions**.
+``label``, ``ip``, ``port``, ``admin_state``,
+``health_strategy``, and ``vendor_extensions``.
 
 ::
 
@@ -1132,7 +1132,7 @@ Successfully processed the request.
 
 
 
-Depricated Api
+Depricated API
 --------------
 
 Show high availability template
@@ -1150,7 +1150,7 @@ List events
     GET /{device_id}/events
 
 
-Deprecated Api
+Deprecated API
 --------------
 
 Show high availability template
