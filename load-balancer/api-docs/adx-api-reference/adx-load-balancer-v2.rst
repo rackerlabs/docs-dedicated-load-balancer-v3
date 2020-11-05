@@ -216,10 +216,10 @@ Successfully processed the request.
     }
 
 
-Retrieves event information by event ID.
-----------------------------------------
-
 Retrieve event information by event ID.
+---------------------------------------
+
+Retrieve event information by using the event ID.
 
 ::
 
@@ -250,6 +250,7 @@ Successfully processed the request.
 
 Add a Virtual IP
 ----------------
+
 Add a virtual server configuration to the load balancer.
 
 ::
@@ -260,11 +261,11 @@ Add a virtual server configuration to the load balancer.
 Request
 ^^^^^^^
 
-account number, port_name, description and comment are optional.
+The **account number**, **port_name**, **description**, and **comment** parameters are optional.
 
-persistence is moved under algorithm and is an enabled/disabled field.
+You can find **persistence** in the **algorithm** section, and it is an `enabled` or `disabled` field.
 
-port is an alias for port_number.
+**port** is an alias for **port_number**.
 
 ::
 
@@ -304,12 +305,10 @@ The request has been accepted for processing.
 Retrieve virtual IP information
 -------------------------------
 
-Use the virtual IPs information operations to retrieve 
+Use this operation to retrieve 
 information for a virtual IP configured for the specified device ID.
 
-If you don't know the ID for a specified virtual IP, use the retrieve
-virtual IPs configuration operation to find it.
-
+If you don't know the ID for a specified virtual IP, use this operation to find it.
 
 ::
 
@@ -373,11 +372,11 @@ Successfully processed the request.
 Update virtual IP information
 -----------------------------
 
-Use the virtual IPs information operations to  update
+Use this operation to update
 information for a virtual IP configured for the specified device ID.
 
-If you don't know the ID for a specified virtual IP, use the retrieve
-virtual IPs configuration operation to find it.
+If you don't know the ID for a specified virtual IP, use the **retrieve
+virtual IPs** configuration operation to find it.
 
 
 ::
@@ -388,11 +387,11 @@ virtual IPs configuration operation to find it.
 Request body
 ^^^^^^^^^^^^
 
-account number, port_name, description and comment are optional.
+The **account number**, **port_name**, **description**, and **comment** parameters are optional.
 
-persistence is moved under algorithm and is an enabled/disabled field.
+You can find **persistence** in the **algorithm** section, and it is an `enabled` or `disabled` field.
 
-port is an alias for port_number.
+**port** is an alias for **port_number**.
 
 
 ::
@@ -432,13 +431,13 @@ The request has been accepted for processing.
 Delete a virtual IP
 -------------------
 
-Use the delete operation to remove a virtual IP from the device
+Use this operation to remove a virtual IP from the device
 configuration.
 
-If you don't know the ID for a specified virtual IP, use the retrieve
-virtual IPs operation to find it.
+If you don't know the ID for a specified virtual IP, use the **retrieve
+virtual IPs** operation to find it.
 
-.. note:: Request Body is optional for the delete operation.
+.. note:: the request body is optional for the delete operation.
 
 ::
 
@@ -537,11 +536,11 @@ Successfully processed the request.
 Assign node to virtual IP
 -------------------------
 
-Use the virtual IP node configuration operations to add 
+Use this operation to add a
 specified node from the virtual IP configuration.
 
 *When you assign a node to a virtual IP, the following field is required:
-account\_number.*
+**account\_number**.*
 
 ::
 
@@ -559,7 +558,7 @@ Request body
 OR
 ^^
 
-Request body for Backward Compatibility
+Request body for backward compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
@@ -586,7 +585,7 @@ The request has been accepted for processing.
 Remove node from virtual IP configuration
 -----------------------------------------
 
-Use the virtual IP node configuration operations to remove a
+Use this operation to remove a
 specified node from the virtual IP configuration.
 
 
@@ -613,7 +612,7 @@ The request has been accepted for processing.
 Enable a virtual IP
 -------------------
 
-Use the virtual IP configuration operations to enable a
+Use this operation to enable a
 virtual IP configured for a specified device.
 
 ::
@@ -658,12 +657,13 @@ The request has been accepted for processing.
 Disable a virtual IP
 --------------------
 
-Use the virtual IP configuration operations to  disable a
+Use this operation to  disable a
 virtual IP configured for a specified device. 
 
-.. note:: When using this feature to set drain connections to a VIP, you must monitor the VIP stats for connection details. See `Show virtual IP statistics`_ for more.
+.. note:: When using this feature to set drain connections to a VIP, you must monitor the VIP stats for
+connection details. See `Show virtual IP statistics`_ for more information.
 
-.. note:: Request Body is optional for the delete operation.
+.. note:: The request body is optional for the disable operation.
 
 ::
 
@@ -756,7 +756,7 @@ Show Nodes for the given device id
 A node is a back-end device providing a service on a specified IP and
 port.
 
-Use the nodes operations to get information about the nodes configured
+Use this operation to get information about the nodes configured
 for a specified device
 
 
@@ -818,11 +818,11 @@ Successfully processed the request.
 Add a node to a device
 ----------------------
 
-Use the nodes operations to add a node for a specified device
+Use this operation to add a node to a specified device.
 
 When adding a node to a device, the following fields are required:
-``label``, ``ip``, ``port``, ``admin_state``,
-``health_strategy``, ``vendor_extensions``
+**label**, **ip**, **port**, **admin_state**,
+**health_strategy**, and **vendor_extensions**.
 
 ::
 
@@ -864,7 +864,7 @@ The request has been accepted for processing.
 Retrieve node information
 -------------------------
 
-Use the node operations to view a specified node.
+Use this operation to view a specified node.
 
 ::
 
@@ -915,7 +915,7 @@ Successfully processed the request.
 Update node information
 -----------------------
 
-Use the node operations to  update a specified node.
+Use this operation to update a specified node.
 
 ::
 
@@ -957,9 +957,9 @@ The request has been accepted for processing.
 Delete node from the device configuration
 -----------------------------------------
 
-Use the node operations to remove a specified node.
+Use this operation to remove a specified node.
 
-.. note:: Request Body is optional for the delete operation.
+.. note:: The request body is optional for the delete operation.
 
 ::
 
@@ -993,7 +993,7 @@ The request has been accepted for processing.
 Enable a node
 -------------
 
-Use the node  operations to enable  specified node
+Use this operation to enable the specified node
 included in the device configuration.
 
 
@@ -1012,7 +1012,7 @@ Request body
 OR
 ^^
 
-Request body for Backward Compatibilty
+Request body for backward compatibilty
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
@@ -1039,12 +1039,14 @@ The request has been accepted for processing.
 Disable a node
 --------------
 
-Use the node status operations to   disable a specified node
+Use this operation to disable a specified node
 included in the device configuration.
 
 
-.. note:: When using this feature to set drain connections to a node (e.g. during a maintenance), you must monitor the node stats for connection details. See `Show node statistics`_ for more.
-.. note:: Request Body is optional for the delete operation.
+.. note:: When using this feature to set drain connections to a node (such as during a maintenance), you must monitor the
+   node stats for connection details. See `Show node statistics`_ for more.
+   
+.. note:: The request body is optional for the disable operation.
 
 ::
 
