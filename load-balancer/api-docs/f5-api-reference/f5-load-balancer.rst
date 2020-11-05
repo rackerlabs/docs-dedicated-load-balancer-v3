@@ -5,17 +5,17 @@ Important Concepts
      :depth: 1
      :local:
 
-Disable vs Offline
-------------------
+Disable versus offline
+----------------------
 
-Some resources can be configured to be disabled or forced offline. It's important to note the key differences.
+You can configure some resources to be disabled or forced offline. It's important to note the key differences.
 
-Disabling a pool member or node and/or marking offline, is around what connections they still permit. 
+The difference between disabling a pool member or node or marking it offline concerns the connections they still permit. 
 
-* **Disable** - ONLY active and persistent connections are permitted.
-* **Offline** - ONLY active connections are permitted.
+* **Disable**: permits active and persistent connections.
+* **Offline**: permite only active connections.
 
-These differences mainly come into use when connection draining is performed and granularity over what sessions are still permitted is required.
+These differences mainly come into use when you perform connection draining and you require granularity over what sessions are still permitted.
 
 
 
@@ -88,8 +88,8 @@ Nodes
 ~~~~~
 
 Nodes are a combination of an IP and a port that process requests
-directed from a Pool in a Virtual Server. Nodes can be bound to one or more
-Pools.
+directed from a pool in a virtual server. You can bind nodes to one or more
+pools.
 
 Use the nodes API operations to list, delete, and update nodes.
 
@@ -285,6 +285,7 @@ Response
 
 Update a node
 -------------
+
 Change description and configuration settings for an
 existing node. You need the node ID to complete this operation.
 
@@ -326,6 +327,7 @@ The node was successfully updated.
 
 Delete a node
 -------------
+
 Remove a node from the load balancer configuration. You need
 the node ID to complete this operation.
 
@@ -353,6 +355,7 @@ The node was successfully deleted.
 
 Retrieve node statistics
 ------------------------
+
 Retrieve information about availability, session status,
 monitor rules for the device with the specified node ID.
 
@@ -401,13 +404,13 @@ Returns statistics for the specified node.
         ]
     }
 
-Disable Node for Maintenance
+Disable node for maintenance
 ----------------------------
 
-This setting allows the Node (all services on an IP address) to accept only new connections that match an existing persistence session.  
-Use this feature to prevent new connections to a Node without affecting existing client connections on the same Node.
+This setting allows the node (all services on an IP address) to accept only new connections that match an existing persistence session.  
+Use this feature to prevent new connections to a node without affecting existing client connections on the same node.
 
-To re-enable the Node, see: `Enable Node After Maintenance`_.
+To re-enable the node, see: `Enable Node After Maintenance`_.
 
 *Note: It is important to understand differences between* `Disable vs Offline`_.
 
@@ -440,11 +443,11 @@ Response
     }
 
 
-Enable Node After Maintenance
+Enable node after maintenance
 -----------------------------
 
-This setting allows the Node (all services on an IP address) to continue accepting new connections.  
-Use this feature to enable a Node after a maintenance.
+This setting allows the Node (all services on an IP address) to accept new connections.  
+Use this feature to enable a node after a maintenance.
 
 ::
 
@@ -475,12 +478,12 @@ Response
     }
 
 
-Offline Node for Maintenance
+Offline node for maintenance
 ----------------------------
 
-This setting allows a Node to be forced Offline and will only allow active connections.
+This setting forces a node offline and allows only active connections.
 
-To bring the Node back online, see: `Online Node After Maintenance`_.
+To bring the node back online, see: `Online Node After Maintenance`_.
 
 *Note: It is important to understand differences between* `Disable vs Offline`_.
 
@@ -509,10 +512,10 @@ Response
     }
 
 
-Online Node After Maintenance
+Online node after maintenance
 ----------------------------
 
-Use this setting to bring a Node back online (usually after a maintenance).
+Use this setting to bring a node back online (usually after a maintenance).
 
 Request body
 ^^^^^^^^^^^^
@@ -542,7 +545,7 @@ Response
 Monitors
 ~~~~~~~~
 
-Monitors verify the health and availability of a node, a pool, or group of
+Monitors verify the health and availability of a node, a pool, or a group of
 nodes in a pool.
 
 .. contents::
@@ -620,7 +623,7 @@ Add a monitor rule to automate checks
 
 Apply monitor rule to the specified node.
 To find the names of the available monitors, submit
-a ``GET monitors`` request.
+a **GET monitors** request.
 
 ::
 
@@ -657,15 +660,13 @@ Remove monitor rule from a node
 
 Remove the monitor rule from the specified node.
 
-
-
 .. note::
 
    This operation does not remove the monitor from the load balancer
    configuration.
    
-   When a monitor-rule is deleted, all monitors associated to 
-   the node will be deleted as well.
+   When you delete a monitor rule, all monitors associated to 
+   the node are deleted as well.
 
 ::
 
@@ -950,7 +951,7 @@ Remove a specified pool from the load balancer configuration.
 Response
 ^^^^^^^^
 
-Delete a pool specified by a Pool id
+Delete a pool specified by using a Pool id.
 
 ::
 
@@ -998,8 +999,8 @@ Retrieve the monitor-rule specified.
 Update monitor rule for a pool
 --------------------------------
 
-Update the monitor rule applied to a specified pool. Use the retrieve monitors
-by pool ID operation to find the monitor rule name.
+Update the monitor rule applied to a specified pool. Use the **retrieve monitors
+by pool ID** operation to find the monitor rule name.
 
 ::
 
@@ -1035,7 +1036,7 @@ Add a monitor rule to a pool
 ----------------------------
 
 Add a monitor rule to a specified pool. To find the names of the available
-monitors, submit a ``GET monitors`` request.
+monitors, submit a **GET monitors** request.
 
 ::
 
@@ -1100,7 +1101,7 @@ Retrieve pool member statistics for a pool
 ------------------------------------------
 
 Retrieve statistics for each pool member in a specified pool including
-configuration settings, availability and monitoring status. The response
+configuration settings, availability, and monitoring status. The response
 includes links to access a detail view for each member.
 
 ::
@@ -1369,8 +1370,7 @@ Response
 Update pool member configuration
 --------------------------------
 
-Update configuration settings for a specified pool
-member.
+Update configuration settings for a specified pool member.
 
 ::
 
@@ -1394,7 +1394,7 @@ Request body
 Response
 ^^^^^^^^
 
-Update a pool member by pool id.
+Update a pool member by pool ID.
 
 ::
 
@@ -1440,7 +1440,7 @@ Response
 Retrieve pool member monitor rule
 ----------------------------------
 
-Retrieves configuration settings for the monitor
+Retrieves configuration settings for a monitor
 rule applied to a specified pool member
 
 ::
@@ -1547,7 +1547,7 @@ Remove monitor rule from pool member
 ------------------------------------
 
 Remove the monitor rule applied to a specified
-pool member (``memberId``) in a specified pool (``poolId``).
+pool member (**memberId**) in a specified pool (**poolId**).
 
 ::
 
@@ -1635,17 +1635,18 @@ Response
         ]
     }
 
-Disable Pool Member For Maintenance
+Disable pool member for maintenance
 -----------------------------------
 
-This setting allows the Pool Member (combination of IP and Port) to accept only new connections that match an existing persistence session.
-Use this feature to prevent new connections to a Pool Member without affecting existing client connections on the same Pool Member.
+This setting allows the pool member (combination of IP and port) to accept only new connections that match an existing persistence session.
+Use this feature to prevent new connections to a pool member without affecting existing client connections on the same pool member.
 
-To monitor connection stats of a Pool Member, see: `Retrieve statistics for pool members`_. Review the first object in the data array. The `serverside` object shows stats on activity to the member. 
+To monitor connection stats of a pool member, see: `Retrieve statistics for pool members`_. Review the first object in the data array.
+The **serverside** object shows stats on activity to the member. 
 
-To re-enable the Pool Member, see: `Enable Pool Member After Maintenance`_.
+To re-enable the pool member, see: `Enable pool member after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable vs Offline`_.
+*Note: It is important to understand differences between* `Disable versus offline`_.
 
 :: 
 
@@ -1676,11 +1677,11 @@ Response
         }
     }
 
-Enable Pool Member After Maintenance
+Enable pool member after maintenance
 ------------------------------------
 
-This setting allows the Pool Member (combination of IP and Port) to continue accepting new connections.
-Use this feature to enable a Pool Member after a maintenance.
+This setting allows the pool member (combination of IP and Port) to accept new connections.
+Use this feature to enable a pool member after a maintenance.
 
 :: 
 
@@ -1712,14 +1713,14 @@ Response
     }
 
 
-Offline Pool Member for Maintenance
-----------------------------
+Offline pool member for maintenance
+-----------------------------------
 
-This setting allows a Pool Member to be forced Offline and will only allow active connections.
+This setting allows you to force a pool member offline and allows only active connections.
 
-To bring the Pool Member back online, see: `Online Pool Member After Maintenance`_.
+To bring the pool member back online, see: `Online pool member after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable vs Offline`_.
+*Note: It is important to understand differences between* `Disable versus offline`_.
 
 Request body
 ^^^^^^^^^^^^
@@ -1746,10 +1747,10 @@ Response
     }
 
 
-Online Pool Member After Maintenance
+Online pool member after maintenance
 ------------------------------------
 
-Use this setting to bring a Pool Member back online (usually after a maintenance).
+Use this setting to bring a pool member back online (usually after a maintenance).
 
 Request body
 ^^^^^^^^^^^^
@@ -1781,7 +1782,7 @@ Virtual servers
 ~~~~~~~~~~~~~~~
 
 Virtual servers are combination of an IP and a port that distribute traffic
-among nodes in a pool. A virtual server can be associated with one or more
+among nodes in a pool. You can associate a virtual server with one or more
 pools.
 
 Use the following operations to view and manage virtual servers configured in
@@ -2227,7 +2228,8 @@ Response
 
 Update a virtual server by ID
 -----------------------------
-Update a virtual in a device specified by virtual id
+
+Update a virtual in a device specified by using the virtual id.
 
 When you update an existing virtual server, you must specify the address and
 port in the request.
@@ -2530,7 +2532,7 @@ Response
 Monitors
 ~~~~~~~~
 
-Monitors verify the health and availability of a node, a pool, or group of
+Monitors verify the health and availability of a node, a pool, or a group of
 nodes in a pool.
 
 Use the following operations to view and manage monitors and monitor
@@ -2642,7 +2644,7 @@ Retrieve a list of monitors.
 Retrieve monitor by ID
 -----------------------
 
-Retrieve information about a specified monitor by monitor ID.
+Retrieve information about a specified monitor by using the monitor ID.
 
 ::
 
@@ -2852,7 +2854,7 @@ Returns information about events logged in the system log files.
 Retrieve event by event id
 --------------------------
 
-Retrieve event information by event ID.
+Retrieve event information by using the event ID.
 
 ::
 
