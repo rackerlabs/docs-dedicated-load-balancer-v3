@@ -149,7 +149,7 @@ Create a node
 
 Add a node to the load balancer.
 
-You can use the event ID returned in the API response to submit an event
+You can use the ``event ID`` returned in the API response to submit an event
 request to verify that the operation completed and get the ID for the
 new node.
 
@@ -410,9 +410,9 @@ Disable node for maintenance
 This setting allows the node (all services on an IP address) to accept only new connections that match an existing persistence session.  
 Use this feature to prevent new connections to a node without affecting existing client connections on the same node.
 
-To re-enable the node, see: `Enable Node After Maintenance`_.
+To re-enable the node, see: `Enable node after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable vs Offline`_.
+*Note: It is important to understand differences between* `Disable versus offline`_.
 
 ::
 
@@ -446,12 +446,12 @@ Response
 Enable node after maintenance
 -----------------------------
 
-This setting allows the Node (all services on an IP address) to accept new connections.  
+This setting allows the node (all services on an IP address) to accept new connections.  
 Use this feature to enable a node after a maintenance.
 
 ::
 
-    PUT /nodes/{node_ID}
+    PUT /nodes/{nodeId}
 
 Request body
 ^^^^^^^^^^^^
@@ -483,9 +483,9 @@ Offline node for maintenance
 
 This setting forces a node offline and allows only active connections.
 
-To bring the node back online, see: `Online Node After Maintenance`_.
+To bring the node back online, see: `Online node after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable vs Offline`_.
+*Note: It is important to understand differences between* `Disable versus offline`_.
 
 Request body
 ^^^^^^^^^^^^
@@ -695,8 +695,8 @@ Pools
 
 Pools are customizable containers configured on load balancers to
 specify the backend devices (nodes) for managing web traffic. Each pool
-can contain zero or more nodes, known as a pool member. Pools can be
-bound to one or more virtual servers.
+can contain zero or more nodes, known as a pool member. You can bind pools
+to one or more virtual servers.
 
 Use the following operations to view and manage pools.
 
@@ -706,6 +706,7 @@ Use the following operations to view and manage pools.
 
 Retrieve pools
 --------------
+
 Retrieve information about all pools created in the current load balancer.
 
 ::
@@ -825,8 +826,8 @@ Retrieve a list of stats.
 Retrieve a pool by ID
 ---------------------
 
-Retrieve information about a specified pool by pool ID.
-Use the retrieve pools operation to pool specified by a pool id.
+Retrieve information about a specified pool by using the pool ID.
+Use the **Retrieve pools** operation to pool specified by a pool ID.
 
 ::
 
@@ -951,7 +952,7 @@ Remove a specified pool from the load balancer configuration.
 Response
 ^^^^^^^^
 
-Delete a pool specified by using a Pool id.
+Delete a pool specified by using a Pool ID.
 
 ::
 
@@ -1547,11 +1548,11 @@ Remove monitor rule from pool member
 ------------------------------------
 
 Remove the monitor rule applied to a specified
-pool member (**memberId**) in a specified pool (**poolId**).
+pool member (``memberId``) in a specified pool (``poolId``).
 
 ::
 
-    DELETE /pools/{poolId}/members/{memberId}/monitor-rule
+    DELETE /pools/{poolId}/members/{memberID}/monitor-rule
 
 Response
 ^^^^^^^^
@@ -1642,7 +1643,7 @@ This setting allows the pool member (combination of IP and port) to accept only 
 Use this feature to prevent new connections to a pool member without affecting existing client connections on the same pool member.
 
 To monitor connection stats of a pool member, see: `Retrieve statistics for pool members`_. Review the first object in the data array.
-The **serverside** object shows stats on activity to the member. 
+The ``serverside`` object shows stats on activity to the member. 
 
 To re-enable the pool member, see: `Enable pool member after maintenance`_.
 
@@ -2229,7 +2230,7 @@ Response
 Update a virtual server by ID
 -----------------------------
 
-Update a virtual in a device specified by using the virtual id.
+Update a virtual in a device specified by using the virtual ID.
 
 When you update an existing virtual server, you must specify the address and
 port in the request.
