@@ -982,12 +982,12 @@ The request has been accepted for processing.
 ::
 
     {
-      "@id": "/loadbalancers/0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "@type": "Event",
-      "event_id": "0a68f566-e2f9-11e4-8a00-1681e6b88ec1",
-      "status": "200",
-      "message": "Processing",
-      "timestamp": "2015-04-01T10:05:01.55Z",
+        "status": 202,
+        "timestamp": "2020-11-10 08:38:34.879285",
+        "@type": "Event",
+        "message": "Processing",
+        "@ref": "990036/loadbalancers/534584/events/c9307227-b2cc-4020-946e-9415b83708d8",
+        "id": "c9307227-b2cc-4020-946e-9415b83708d8"
     }
 
 Enable a node
