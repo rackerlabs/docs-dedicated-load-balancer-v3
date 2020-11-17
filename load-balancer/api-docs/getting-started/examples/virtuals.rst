@@ -349,11 +349,11 @@ Create a virtual server
 -----------------------
 
 You do not have to specify an IP address when you create a new virtual server.
-If you do supply one, the create operation updates an existing virtual. If you
-want to create a virtual server specify a different port number.
+If you do supply one, the create operation updates an existing virtual server. If you
+want to create a new virtual server specify a different port number.
 
 
-Th following example creates a server
+The following example creates a server:
 
 **Example: Create a virtual server cURL request**
 
