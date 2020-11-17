@@ -6,9 +6,9 @@ with your account by submitting a GET request to the
 :ref:`base URL <baseurlf5>`. Information includes
 customer account associated with the load balancer, hardware and software
 specifications, network configuration, high availability status,
-uptime, CPU status and other information about the device.
+uptime, CPU status, and other information about the device.
 
-The following examples show the cURL request and response.
+The following examples show the cURL request and response:
 
 **Example: cURL Retrieve load balancer information request**
 
@@ -22,12 +22,12 @@ The following examples show the cURL request and response.
 
    This request does not accept a request body.
 
-If the request is successful, you see an HTTP 200 response header
+If the request is successful, you see an `HTTP 200` response header
 followed a listing of the load balancer information.
 
 The response includes an array of links that you can use to retrieve
 additional information about the load balancer configuration and other
-details. For example, use the nodes link to retrieve information about
+details. For example, use the **nodes** link to retrieve information about
 all the nodes configured in the load balancer.
 
 **Example: cURL Retrieve details response**
