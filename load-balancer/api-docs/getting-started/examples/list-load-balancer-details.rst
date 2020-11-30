@@ -24,7 +24,7 @@ have been deleted.
 
 This request does not accept a request body.
 
-If the request is successful, you see an HTTP 200 response header
+If the request is successful, you see an `HTTP 200` response header
 followed a listing of the load balancer information.
 
 **Example: Retrieve load balancer details response**
@@ -88,5 +88,5 @@ followed a listing of the load balancer information.
 
 The response includes an array of links that you can use to retrieve
 additional information about the load balancer configuration and other
-details. For example, use the nodes link to retrieve information about
+details. For example, use the **nodes** link to retrieve information about
 all the nodes configured in the load balancer.

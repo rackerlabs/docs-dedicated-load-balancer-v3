@@ -25,7 +25,6 @@ details about specific operations, see the API reference sections.
 
 .. note::
     All requests to authenticate against and operate the service are
-    performed using SSL over HTTP (HTTPS) on TCP port 443.For authentication
+    performed using SSL over HTTP (HTTPS) on TCP port `443`. For authentication
     instructions, see
-    :ref:`Authenticate to the Rackspace Cloud
-    <authenticate-to-identity-service>`.
+    :ref:`Authenticate to the Rackspace Cloud<authenticate-to-identity-service>`.
