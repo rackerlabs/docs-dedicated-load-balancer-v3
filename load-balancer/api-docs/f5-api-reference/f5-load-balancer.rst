@@ -38,9 +38,11 @@ CPU statistics, and so on.
     {
       "data": [{
         "customer": "1234567",
+        "chassis_serial": "f5-gvop-hkiv",
         "uptime": "396 days,  9:22",
         "ha_role": "true",
         "hostname": "1234567-lb1.example.rackspace.com",
+        "firmware_version": "",
         "ram_mem": [{
           "total_kbytes": "4158218",
           "free_kbytes": "162846",
@@ -134,7 +136,7 @@ Retrieve a list of nodes
                  },
                 "logging": "disabled",
                 "metadata": {},
-                "monitors": {},
+                "monitorRule": {},
                 "partition": "Common",
                 "rateLimit": "disabled",
                 "ratio": 1,
@@ -346,6 +348,7 @@ The node was successfully deleted.
       "data": {
         "eventId": "<eventId:str>",
         "resource": "<nodeId:str>",
+        “status”: “PROCESSING”,
         "timestamp": "2016-03-08T17:22:33.6349648Z",
         "eventRef": "/events/<eventId:str>"
       }
@@ -568,7 +571,7 @@ Response
     {
         "data": [
             {
-                "monitors": [
+                "names": [
                     "https_443",
                     "real_server",
                     "tcp_echo"
@@ -731,7 +734,7 @@ Response
                 "linkQosToClient": "pass-through",
                 "linkQosToServer": "pass-through",
                 "loadBalancingMode": "round-robin",
-                "metadata": {},
+                "metadata": [],
                 "minActiveMembers": 0,
                 "minUpMembers": 0,
                 "minUpMembersAction": "failover",
@@ -746,7 +749,7 @@ Response
                 "slowRampTime": 10,
                 "description": null,
                 "members": {},
-                "monitors": {},
+                "monitorRule": {},
             }
         ]
     }
@@ -854,13 +857,13 @@ Retrieve the pool specified.
                 "linkQosToClient": "pass-through",
                 "linkQosToServer": "pass-through",
                 "loadBalancingMode": "round-robin",
-                "metadata": {},
+                "metadata": [],
                 "minActiveMembers": 0,
                 "minUpMembers": 0,
                 "minUpMembersAction": "failover",
                 "minUpMembersChecking": "disabled",
                 "partition": "Common",
-                "profiles": "none",
+                "profiles": null,
                 "queueDepthLimit": 0,
                 "queueOnConnectionLimit": "disabled",
                 "queueTimeLimit": 0,
@@ -869,7 +872,13 @@ Retrieve the pool specified.
                 "slowRampTime": 10,
                 "description": "none",
                 "members": {},
-                "monitors": {}
+                "monitor": {},
+                "monitorRule": {
+                    "minimum": 1,
+                    "names": [
+                        "tcp"
+                    ]
+                }
             }
         ]
     }
@@ -1113,43 +1122,46 @@ Response
          "data": [
             {
                "id": "test1:80",
+               "activeMemberCnt": 0,
                "address": "127.0.0.1",
                "connq": {
-               "ageEdm": 0,
-               "ageEma": 0,
-               "ageHead": 0,
-               "ageMax": 0,
-               "depth": 0,
-               "serviced": 0
-            },
+                   "ageEdm": 0,
+                   "ageEma": 0,
+                   "ageHead": 0,
+                   "ageMax": 0,
+                   "depth": 0,
+                   "serviced": 0
+                },
+               "connqAll": {
+                    "ageEdm": 0,
+                    "ageEma": 0,
+                    "ageHead": 0,
+                    "ageMax": 0,
+                    "depth": 0,
+                    "serviced": 0
+               },
                "curSessions": 0,
+               "minActiveMembers": 0,
                "monitorRule": {
-               "monitors": [
-               "default"
-               ],
-               "minimum": "all"
+                   "monitors": [
+                   "default"
+                   ],
+                   "minimum": "all"
                },
-               "monitorStatus": "unchecked",
-               "nodeName": "test1",
-               "poolName": "test2",
-               "port": {
-               "type": "equal",
-               "value": 80
-               },
+               "name": "test1:80",
                "serverside": {
-               "bitsIn": 0,
-               "bitsOut": 0,
-               "curConns": 0,
-               "maxConns": 0,
-               "pktsIn": 0,
-               "pktsOut": 0,
-               "totConns": 0
+                   "bitsIn": 0,
+                   "bitsOut": 0,
+                   "curConns": 0,
+                   "maxConns": 0,
+                   "pktsIn": 0,
+                   "pktsOut": 0,
+                   "totConns": 0
                },
-               "sessionStatus": "enabled",
                "status": {
-               "availabilityState": "unknown",
-               "enabledState": "enabled",
-               "statusReason": "Pool member does not have service checking enabled"
+                   "availabilityState": "unknown",
+                   "enabledState": "enabled",
+                   "statusReason": "Pool member does not have service checking enabled"
                },
                "totRequests": 0,
             }
@@ -1196,22 +1208,21 @@ Response
             "type": "equal",
             "value": 80
           },
-          "monitors": {},
+          "monitorRule": {},
           "address": "127.0.0.1",
-          "appService": "none",
+          "appService": null,
           "connectionLimit": 0,
           "description": "none",
           "dynamicRatio": 1,
           "inheritProfile": "enabled",
           "logging": "disabled",
-          "monitor": "default",
           "priorityGroup": 0,
           "rateLimit": "disabled",
           "ratio": 1,
           "session": "monitor-enabled",
-          "state": "down",
+          "state": "unchecked",
           "metadata": {},
-          "profiles": [],
+          "profiles": null,
         }
       ]
     }
@@ -1246,7 +1257,7 @@ Response
         "data": {
             "eventId": "<eventId:str>",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
+            “status”: “PROCESSING”,
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1288,7 +1299,7 @@ Response
             ],
             "minimum": "all"
           },
-          "monitorStatus": "unchecked",
+          "monitorStatus": "address-down",
           "nodeName": "test1",
           "poolName": "test2",
           "port": {
@@ -1342,14 +1353,17 @@ Response
                 "dynamicRatio": 1,
                 "inheritProfile": "enabled",
                 "logging": "disabled",
-                "monitor": "default",
                 "priorityGroup": 0,
+                "port": {
+                    "type": "equal",
+                    "value": 70
+                },
                 "rateLimit": "disabled",
                 "ratio": 1,
-                "session": "monitor-enabled",
-                "state": "down",
+                "session": "user-enabled",
+                "state": "unchecked",
                 "metadata": {},
-                "monitors": {},
+                "monitorRule": {},
                 "profiles": []
             }
         ]
@@ -1392,7 +1406,6 @@ Update a pool member by pool id.
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1420,7 +1433,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1446,7 +1458,9 @@ Response
       "data": [
         {
           "minimum": "all",
-          "address": "127.0.0.1",
+          "names": [
+                "default"
+          ]
         }
       ]
     }
@@ -1486,7 +1500,6 @@ event ID to get event status and output information.
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-16T17:09:53.1059638Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1523,7 +1536,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-24T10:41:08.6194067Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1552,7 +1564,6 @@ event ID to retrieve event status and output information.
         "data": {
             "eventId": "<eventId:str>",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "eventRef": "/events/<eventId:str}",
             "status": "PROCESSING",
             "timestamp": "2016-03-08T17:22:33.6249648Z"
@@ -1595,7 +1606,7 @@ Response
                     ],
                     "minimum": "all"
                 },
-                "monitorStatus": "unchecked",
+                "monitorStatus": "address-down",
                 "nodeName": "test1",
                 "poolName": "test2",
                 "port": {
@@ -1657,7 +1668,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1692,7 +1702,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1886,6 +1895,7 @@ Request body
       "ipForward": "disabled",
       "gtmScore": 0,
       "description": "New Description",
+      "fallbackPersistence": null,
       "port": {
         "value": 80,
         "type": "equal"
@@ -2235,6 +2245,7 @@ Request body
         "ipForward": "disabled",
         "gtmScore": 0,
         "description": "New Description updated",
+        "fallbackPersistence": null,
         "port": {
             "value": 80,
             "type": "equal"
@@ -2548,72 +2559,79 @@ Retrieve a list of monitors.
     {
         "data": [
             {
-                "id": "TestMonitor-DONT-DELETE",
+                "acceptRcode": "no-error",
+                "address": "any",
+                "answerContains": "query-type",
                 "appService": null,
-                "address" : "127.0.0.1",
-                "port": {
-                    "type": "equal",
-                    "value": 80
-                },
-                "defaultsFrom": "tcp",
+                "defaultsFrom": null,
                 "description": null,
+                "id": "dns",
                 "interval": 5,
-                "ipDscp": 0,
                 "manualResume": "disabled",
-                "recv": null,
-                "recvDisable": null,
-                "reverse": "disabled",
-                "send": null,
-                "timeUntilUp": 0,
-                "timeout": 16,
-                "transparent": "disabled",
-                "type": "tcp",
-                "upInterval": 0
-            },
-            {
-                "id": "MON-TCP-80",
-                "appService": null,
-                "address" : "127.0.0.1",
-                "port": {
-                    "type": "equal",
-                    "value": 80
-                },
-                "defaultsFrom": "tcp",
-                "description": null,
-                "interval": 5,
-                "ipDscp": 0,
-                "manualResume": "disabled",
-                "recv": null,
-                "recvDisable": null,
-                "reverse": "disabled",
-                "send": null,
-                "timeUntilUp": 0,
-                "timeout": 16,
-                "transparent": "disabled",
-                "type": "tcp",
-                "upInterval": 0
-            },
-            {
-                "id": "test-monitor",
-                "appService": null,
-                "address" : "127.0.0.1",
                 "port": {
                     "type": "any",
                     "value": "any"
                 },
-                "debug" : "enabled",
-                "defaultsFrom": "udp",
-                "description": null,
-                "interval": 5,
-                "manualResume": "disabled",
+                "qname": null,
+                "qtype": "a",
                 "recv": null,
-                "recvDisable": null,
                 "reverse": "disabled",
-                "send": "\"default send string\"",
                 "timeUntilUp": 0,
                 "timeout": 16,
                 "transparent": "disabled",
-                "type": "udp",
+                "type": "dns",
+                "upInterval": 0
+            },
+            {
+                "address": "any",
+                "appService": null,
+                "cert": null,
+                "cipherlist": null,
+                "compatibility": null,
+                "defaultsFrom": null,
+                "description": null,
+                "id": "https",
+                "interval": 5,
+                "ipDscp": 0,
+                "key": null,
+                "manualResume": "disabled",
+                "password": null,
+                "port": {
+                    "type": "any",
+                    "value": "any"
+                },
+                "recv": null,
+                "recvDisable": null,
+                "reverse": "disabled",
+                "send": "\"GET /\\r\\n\"",
+                "timeUntilUp": 0,
+                "timeout": 16,
+                "transparent": "disabled",
+                "type": "https",
+                "upInterval": 0,
+                "username": null
+            },
+            {
+                "address": "1.2.3.27",
+                "appService": null,
+                "defaultsFrom": "tcp",
+                "description": "\"Updated value\"",
+                "id": "FakeTestMonitor",
+                "interval": 5,
+                "ipDscp": 0,
+                "manualResume": "disabled",
+                "port": {
+                    "type": "equal",
+                    "value": 86
+                },
+                "recv": "stuff",
+                "recvDisable": "disabled",
+                "reverse": "disabled",
+                "send": null,
+                "timeUntilUp": 0,
+                "timeout": 16,
+                "transparent": "enabled",
+                "type": "tcp",
                 "upInterval": 0
             }
         ]
@@ -2647,17 +2665,16 @@ Retrieve details about a specified monitor.
                     "type": "equal",
                     "value": 80
                 },
-                "appService": "none",
+                "appService": null,
                 "defaultsFrom": "tcp",
                 "description": "none",
                 "interval": 5,
                 "ipDscp": 0,
                 "manualResume": "disabled",
-                "partition": "Common",
-                "recv": "none",
-                "recvDisable": "none",
+                "recv": null,
+                "recvDisable": null,
                 "reverse": "disabled",
-                "send": "none",
+                "send": null,
                 "timeUntilUp": 0,
                 "timeout": 16,
                 "transparent": "disabled",
@@ -2800,36 +2817,6 @@ Events
 ~~~~~~
 
 
-Retrieve events
----------------
-
-Retrieve all events.
-
-::
-
-    GET /events
-
-*This operation does not accept a request body.*
-
-Response
-^^^^^^^^
-
-Returns information about events logged in the system log files.
-
-::
-
-    {
-        "data": [{
-            "event_id": "<eventId:str>",
-            "status": "200",
-            "message": "COMPLETED",
-            "output": {"virtualId":"sowmyapegtest","Vlans":"["internal"]","message":"virtual/vlan association was updated   Successfully"},
-            "ref": "/events/<eventId:str>",
-            "entrytimestamp": "2016-03-04T21:29:12",
-            "modifiedtimestamp": "2016-03-04T21:29:12"
-        }]
-    }
-
 Retrieve event by event id
 --------------------------
 
@@ -2853,8 +2840,6 @@ Returns information about the event with the specified ID.
             "event_id": "<eventId:str>",
             "status": "200",
             "message": "COMPLETED",
-            "output": {"virtualId":"sowmyapegtest","Vlans":"["internal"]","message":"virtual/vlan association was updated   Successfully"},
-            "ref": "/events/<eventId:str>",
             "entrytimestamp": "2016-03-04T21:29:12",
             "modifiedtimestamp": "2016-03-04T21:29:12"
         }]
