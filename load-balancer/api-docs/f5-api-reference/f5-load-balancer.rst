@@ -38,9 +38,11 @@ CPU statistics, and so on.
     {
       "data": [{
         "customer": "1234567",
+        "chassis_serial": "f5-gvop-hkiv",
         "uptime": "396 days,  9:22",
         "ha_role": "true",
         "hostname": "1234567-lb1.example.rackspace.com",
+        "firmware_version": "",
         "ram_mem": [{
           "total_kbytes": "4158218",
           "free_kbytes": "162846",
@@ -134,7 +136,7 @@ Retrieve a list of nodes
                  },
                 "logging": "disabled",
                 "metadata": {},
-                "monitors": {},
+                "monitorRule": {},
                 "partition": "Common",
                 "rateLimit": "disabled",
                 "ratio": 1,
@@ -348,6 +350,7 @@ The node was successfully deleted.
       "data": {
         "eventId": "<eventId:str>",
         "resource": "<nodeId:str>",
+        “status”: “PROCESSING”,
         "timestamp": "2016-03-08T17:22:33.6349648Z",
         "eventRef": "/events/<eventId:str>"
       }
@@ -571,7 +574,7 @@ Response
     {
         "data": [
             {
-                "monitors": [
+                "names": [
                     "https_443",
                     "real_server",
                     "tcp_echo"
@@ -1256,7 +1259,7 @@ Response
         "data": {
             "eventId": "<eventId:str>",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
+            “status”: “PROCESSING”,
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1404,7 +1407,6 @@ Update a pool member by pool ID.
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1432,7 +1434,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1500,7 +1501,6 @@ event ID to get event status and output information.
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-16T17:09:53.1059638Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1537,7 +1537,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-24T10:41:08.6194067Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1566,7 +1565,6 @@ event ID to retrieve event status and output information.
         "data": {
             "eventId": "<eventId:str>",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "eventRef": "/events/<eventId:str}",
             "status": "PROCESSING",
             "timestamp": "2016-03-08T17:22:33.6249648Z"
@@ -1672,7 +1670,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1707,7 +1704,6 @@ Response
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
-            "type": "<memberId:str>",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1901,6 +1897,7 @@ Request body
       "ipForward": "disabled",
       "gtmScore": 0,
       "description": "New Description",
+      "fallbackPersistence": null,
       "port": {
         "value": 80,
         "type": "equal"
@@ -2251,6 +2248,7 @@ Request body
         "ipForward": "disabled",
         "gtmScore": 0,
         "description": "New Description updated",
+        "fallbackPersistence": null,
         "port": {
             "value": 80,
             "type": "equal"
@@ -2822,36 +2820,6 @@ Events
 ~~~~~~
 
 
-Retrieve events
----------------
-
-Retrieve all events.
-
-::
-
-    GET /events
-
-*This operation does not accept a request body.*
-
-Response
-^^^^^^^^
-
-Returns information about events logged in the system log files.
-
-::
-
-    {
-        "data": [{
-            "event_id": "<eventId:str>",
-            "status": "200",
-            "message": "COMPLETED",
-            "output": {"virtualId":"sowmyapegtest","Vlans":"["internal"]","message":"virtual/vlan association was updated   Successfully"},
-            "ref": "/events/<eventId:str>",
-            "entrytimestamp": "2016-03-04T21:29:12",
-            "modifiedtimestamp": "2016-03-04T21:29:12"
-        }]
-    }
-
 Retrieve event by event id
 --------------------------
 
@@ -2875,8 +2843,6 @@ Returns information about the event with the specified ID.
             "event_id": "<eventId:str>",
             "status": "200",
             "message": "COMPLETED",
-            "output": {"virtualId":"sowmyapegtest","Vlans":"["internal"]","message":"virtual/vlan association was updated   Successfully"},
-            "ref": "/events/<eventId:str>",
             "entrytimestamp": "2016-03-04T21:29:12",
             "modifiedtimestamp": "2016-03-04T21:29:12"
         }]

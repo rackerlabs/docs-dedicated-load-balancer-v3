@@ -22,7 +22,7 @@ You can use the |apiservice| to manage the following load balancer models:
      - |ADXVersion|
 
 For details about using these load balancer models for hybrid hosting, see
-:how-to:`Using dedicated load balancers with RackConnect v3.0\
+:how-to:`Using dedicated load balancers with RackConnect v2.0\
 <using-dedicated-load-balancers-with-rackconnect-v20>`.
 
 .. warning::
