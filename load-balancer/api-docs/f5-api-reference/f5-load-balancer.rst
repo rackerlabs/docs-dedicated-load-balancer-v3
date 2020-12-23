@@ -274,7 +274,7 @@ Response
                     "name": "none"
                 },
                 "logging": "disabled",
-                "monitors": {},
+                "monitorRule": {},
                 "metadata": {},
                 "partition": "Common",
                 "rateLimit": "disabled",
