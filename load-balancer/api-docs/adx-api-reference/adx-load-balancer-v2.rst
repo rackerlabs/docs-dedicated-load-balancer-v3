@@ -1111,15 +1111,23 @@ Successfully processed the request.
         "load_balancer_data": {
             "id": "RdcTestNode6:22.22.2.22:75",
             "label": "RdcTestNode6",
-            "ip": "10.14.15.12",
+            "ip": "22.22.2.22",
             "description": null,
             "port_name": "75",
             "port_number": 75,
             "weight": -1,
             "protocol": "BOTH",
             "health_strategy": {
-                "strategy": "TCP_PORT",
-                "port_number": 75
+                "strategy": "HTTP_RES_CODE",
+                "port_number": 80,
+                "ssl": false,
+                "method": "GET",
+                "path": "/",
+                "http_codes_ok": [
+                    200,
+                    203
+                ],
+                "http_body_pattern": null
             },
             "limit": -1,
             "admin_state": "ENABLED",
