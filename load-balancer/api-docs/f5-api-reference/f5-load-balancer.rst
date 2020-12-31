@@ -141,7 +141,7 @@ Retrieve a list of nodes
                 "rateLimit": "disabled",
                 "ratio": 1,
                 "session": "user-enabled",
-                "state": "unchecked",
+                "state": "unchecked"
             }
         ]
     }
@@ -236,7 +236,7 @@ Response
                     "enabledState": "enabled",
                     "statusReason": "Forced down"
                 },
-                "totRequests": 3,
+                "totRequests": 3
             }
         ]
     }
@@ -350,7 +350,7 @@ The node was successfully deleted.
       "data": {
         "eventId": "<eventId:str>",
         "resource": "<nodeId:str>",
-        “status”: “PROCESSING”,
+        "status": "PROCESSING",
         "timestamp": "2016-03-08T17:22:33.6349648Z",
         "eventRef": "/events/<eventId:str>"
       }
@@ -652,7 +652,7 @@ Response
       "data": {
         "eventId": "<eventId:str>",
         "status": "PROCESSING",
-        "resource": "<nodeId:str>"
+        "resource": "<nodeId:str>",
         "eventRef": "/events/<eventId:str>",
         "timestamp": "2016-03-18T03:18:35.5077939Z"
       }
@@ -751,7 +751,7 @@ Response
                 "slowRampTime": 10,
                 "description": null,
                 "members": {},
-                "monitorRule": {},
+                "monitorRule": {}
             }
         ]
     }
@@ -819,7 +819,7 @@ Retrieve a list of stats.
             "availabilityState": "available",
             "enabledState": "enabled",
             "statusReason": "The pool is available"
-          },
+          }
         }
       ]
     }
@@ -1165,7 +1165,7 @@ Response
                    "enabledState": "enabled",
                    "statusReason": "Pool member does not have service checking enabled"
                },
-               "totRequests": 0,
+               "totRequests": 0
             }
          ]
       }
@@ -1224,7 +1224,7 @@ Response
           "session": "monitor-enabled",
           "state": "unchecked",
           "metadata": {},
-          "profiles": null,
+          "profiles": null
         }
       ]
     }
@@ -1323,7 +1323,7 @@ Response
             "enabledState": "enabled",
             "statusReason": "Pool member does not have service checking enabled"
           },
-          "totRequests": 0,
+          "totRequests": 0
         }
       ]
     }
@@ -2522,7 +2522,7 @@ Response
     {
         "data": [
             {
-                "name": "test_pool",
+                "name": "test_pool"
             }
         ]
     }
@@ -2737,7 +2737,7 @@ Update a monitor in the load balancer.
             "status": "PROCESSING",
             "resource": "<monitorId:str>",
             "eventRef": "/events/<eventId:str>",
-            "timestamp": "2016-03-18T03:18:35.5077939Z",
+            "timestamp": "2016-03-18T03:18:35.5077939Z"
         }
     }
 
