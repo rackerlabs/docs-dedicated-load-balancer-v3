@@ -261,9 +261,11 @@ Add a virtual server configuration to the load balancer.
 Request
 ^^^^^^^
 
-The ``account number``, ``port_name``, ``description``, and ``comment`` parameters are optional.
+The ``account number``, ``port_name``, ``description``, and ``comment``
+parameters are optional.
 
-You can find ``persistence`` in the ``algorithm`` section, and it is an `enabled` or `disabled` field.
+You can find ``persistence`` in the ``algorithm`` section, and it is an
+`enabled` or `disabled` field.
 
 ``port`` is an alias for ``port_number``.
 
@@ -305,10 +307,11 @@ The request has been accepted for processing.
 Retrieve virtual IP information
 -------------------------------
 
-Use this operation to retrieve 
+Use this operation to retrieve
 information for a virtual IP configured for the specified device ID.
 
-If you don't know the ID for a specified virtual IP, use this operation to find it.
+If you don't know the ID for a specified virtual IP, use this operation to
+find it.
 
 ::
 
@@ -389,9 +392,11 @@ virtual IPs** configuration operation to find it.
 Request body
 ^^^^^^^^^^^^
 
-The ``account number``, ``port_name``, ``description``, and ``comment`` parameters are optional.
+The ``account number``, ``port_name``, ``description``, and ``comment``
+parameters are optional.
 
-You can find ``persistence`` in the ``algorithm`` section, and it is an `enabled` or `disabled` field.
+You can find ``persistence`` in the ``algorithm`` section, and it is an
+`enabled` or `disabled` field.
 
 ``port`` is an alias for ``port_number``.
 
@@ -660,9 +665,11 @@ Disable a virtual IP
 --------------------
 
 Use this operation to  disable a
-virtual IP configured for a specified device. 
+virtual IP configured for a specified device.
 
-.. note:: When using this feature to set drain connections to a VIP, you must monitor the VIP stats for connection details. See `Show virtual IP statistics`_ for more information.
+.. note:: When using this feature to set drain connections to a VIP, you must
+   monitor the VIP stats for connection details. See
+   `Show virtual IP statistics`_ for more information.
 
 .. note:: The request body is optional for the disable operation.
 
@@ -1052,9 +1059,10 @@ Use this operation to disable a specified node
 included in the device configuration.
 
 
-.. note:: When using this feature to set drain connections to a node (such as during a maintenance), you must monitor the
+.. note:: When using this feature to set drain connections to a node (such as
+   during a maintenance), you must monitor the
    node stats for connection details. See `Show node statistics`_ for more.
-   
+
 .. note:: The request body is optional for the disable operation.
 
 ::
@@ -1183,4 +1191,3 @@ List events
 ::
 
     GET /{device_id}/events
-

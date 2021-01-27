@@ -20,7 +20,6 @@ details about specific operations, see the API reference sections.
    date-time-format
    faults
    limits
-   role-based-access-control
 
 
 .. note::
