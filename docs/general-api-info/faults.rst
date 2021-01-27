@@ -8,7 +8,8 @@ When an error occurs, the |apiservice| returns a fault object that contains an
 HTTP error response code that denotes the type of error. In the body of the
 response, the system will return additional information about the fault.
 
-The following table lists possible fault types with their associated error codes and
+The following table lists possible fault types with their associated error
+codes and
 descriptions.
 
 .. list-table::
@@ -36,7 +37,8 @@ descriptions.
      - The requested resource cannot currently be operated on.
    * - Internal Server Error
      - 500
-     - The server encountered an unexpected condition which prevented it from fulfilling the request.
+     - The server encountered an unexpected condition which prevented it from
+       fulfilling the request.
    * - Not implemented
      - 501
      - Retrieving a specific monitor is not implemented.

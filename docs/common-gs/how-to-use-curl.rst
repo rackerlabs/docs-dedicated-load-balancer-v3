@@ -20,7 +20,8 @@ a script.
 
 .. _auth-curl-json:
 
-The following example shows a cURL command for sending an authentication request to
+The following example shows a cURL command for sending an authentication
+request to
 the Rackspace Cloud Identity service.
 
 **Example: cURL command for sending a JSON request**
@@ -115,7 +116,8 @@ To use json.tool, import the JSON module. For information about json.tool, see
 `JSON encoder and decoder`_.
 
 
-If you run a Python version earlier than 2.6, import the simplejson module and use
+If you run a Python version earlier than 2.6, import the simplejson module and
+use
 simplejson.tool. For information about simplejson.tool, see
 `simplejson encoder and decoder`_.
 
@@ -158,7 +160,8 @@ The following example shows the cURL format for Linux and UNIX systems:
             -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"yourUserName","apiKey":"$apiKey"}}}' \
             -H "Content-type: application/json"
 
-The following example shows the same request with the changes made for Windows systems:
+The following example shows the same request with the changes made for
+Windows systems:
 
 .. code:: console
 

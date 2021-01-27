@@ -8,14 +8,17 @@ Important Concepts
 Disable versus offline
 ----------------------
 
-You can configure some resources to be disabled or forced offline. It's important to note the key differences.
+You can configure some resources to be disabled or forced offline. It's
+important to note the key differences.
 
-The difference between disabling a pool member or node or marking it offline concerns the connections they still permit. 
+The difference between disabling a pool member or node or marking it offline
+concerns the connections they still permit.
 
 * **Disable**: permits active and persistent connections.
 * **Offline**: permite only active connections.
 
-These differences mainly come into use when you perform connection draining and you require granularity over what sessions are still permitted.
+These differences mainly come into use when you perform connection draining and
+you require granularity over what sessions are still permitted.
 
 
 
@@ -410,12 +413,15 @@ Returns statistics for the specified node.
 Disable node for maintenance
 ----------------------------
 
-This setting allows the node (all services on an IP address) to accept only new connections that match an existing persistence session.  
-Use this feature to prevent new connections to a node without affecting existing client connections on the same node.
+This setting allows the node (all services on an IP address) to accept only
+new connections that match an existing persistence session.
+Use this feature to prevent new connections to a node without affecting
+existing client connections on the same node.
 
 To re-enable the node, see: `Enable node after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable versus offline`_.
+*Note: It is important to understand differences between*
+`Disable versus offline`_.
 
 ::
 
@@ -449,7 +455,8 @@ Response
 Enable node after maintenance
 -----------------------------
 
-This setting allows the node (all services on an IP address) to accept new connections.  
+This setting allows the node (all services on an IP address) to accept new
+connections.
 Use this feature to enable a node after a maintenance.
 
 ::
@@ -488,7 +495,8 @@ This setting forces a node offline and allows only active connections.
 
 To bring the node back online, see: `Online node after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable versus offline`_.
+*Note: It is important to understand differences between*
+`Disable versus offline`_.
 
 Request body
 ^^^^^^^^^^^^
@@ -516,7 +524,7 @@ Response
 
 
 Online node after maintenance
-----------------------------
+-----------------------------
 
 Use this setting to bring a node back online (usually after a maintenance).
 
@@ -667,8 +675,8 @@ Remove the monitor rule from the specified node.
 
    This operation does not remove the monitor from the load balancer
    configuration.
-   
-   When you delete a monitor rule, all monitors associated to 
+
+   When you delete a monitor rule, all monitors associated to
    the node are deleted as well.
 
 ::
@@ -1003,7 +1011,8 @@ Retrieve the monitor-rule specified.
 Update monitor rule for a pool
 --------------------------------
 
-Update the monitor rule applied to a specified pool. Use the **retrieve monitors
+Update the monitor rule applied to a specified pool. Use the **retrieve
+monitors
 by pool ID** operation to find the monitor rule name.
 
 ::
@@ -1637,17 +1646,22 @@ Response
 Disable pool member for maintenance
 -----------------------------------
 
-This setting allows the pool member (combination of IP and port) to accept only new connections that match an existing persistence session.
-Use this feature to prevent new connections to a pool member without affecting existing client connections on the same pool member.
+This setting allows the pool member (combination of IP and port) to accept
+only new connections that match an existing persistence session.
+Use this feature to prevent new connections to a pool member without
+affecting existing client connections on the same pool member.
 
-To monitor connection stats of a pool member, see: `Retrieve statistics for pool members`_. Review the first object in the data array.
-The ``serverside`` object shows stats on activity to the member. 
+To monitor connection stats of a pool member, see:
+`Retrieve statistics for pool members`_. Review the first object in the
+data array.
+The ``serverside`` object shows stats on activity to the member.
 
 To re-enable the pool member, see: `Enable pool member after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable versus offline`_.
+*Note: It is important to understand differences between*
+`Disable versus offline`_.
 
-:: 
+::
 
     PUT /pools/{pool_ID}/members/{member_ID}
 
@@ -1666,7 +1680,7 @@ Response
 ::
 
     {
-        "data": { 
+        "data": {
             "eventId": "<eventId:str>",
             "status": "PROCESSING",
             "resource": "<poolId:str>",
@@ -1678,10 +1692,11 @@ Response
 Enable pool member after maintenance
 ------------------------------------
 
-This setting allows the pool member (combination of IP and Port) to accept new connections.
+This setting allows the pool member (combination of IP and Port) to accept
+new connections.
 Use this feature to enable a pool member after a maintenance.
 
-:: 
+::
 
     PUT /pools/{pool_ID}/members/{member_ID}
 
@@ -1713,11 +1728,14 @@ Response
 Offline pool member for maintenance
 -----------------------------------
 
-This setting allows you to force a pool member offline and allows only active connections.
+This setting allows you to force a pool member offline and allows only active
+connections.
 
-To bring the pool member back online, see: `Online pool member after maintenance`_.
+To bring the pool member back online, see:
+`Online pool member after maintenance`_.
 
-*Note: It is important to understand differences between* `Disable versus offline`_.
+*Note: It is important to understand differences between*
+`Disable versus offline`_.
 
 Request body
 ^^^^^^^^^^^^
@@ -1747,7 +1765,8 @@ Response
 Online pool member after maintenance
 ------------------------------------
 
-Use this setting to bring a pool member back online (usually after a maintenance).
+Use this setting to bring a pool member back online
+(usually after a maintenance).
 
 Request body
 ^^^^^^^^^^^^

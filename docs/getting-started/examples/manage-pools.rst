@@ -9,7 +9,8 @@ You use the Pools operations described in :ref:`F5 BigIP API<f5-api-reference>`
 to add, configure, and update pools and pool members. You can also view
 statistics and configure monitor rules for pools and pool members.
 
-To use a pool for load balancing, you need to associate it with a virtual server.
+To use a pool for load balancing, you need to associate it with a virtual
+server.
 
 
 Retrieve details for pools
@@ -20,7 +21,8 @@ pools configured in the load balancer.
 
 The response includes links that you can use to retrieve
 additional information about the pools configuration.
-For example, use the **self** link to retrieve information about a specific pool,
+For example, use the **self** link to retrieve information about a specific
+pool,
 and use the **members** link to retrieve information about
 the backend devices that the virtual server uses to manage the load balancer
 workloads.
