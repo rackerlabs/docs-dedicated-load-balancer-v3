@@ -1,7 +1,7 @@
 .. _authenticate-using-curl:
 
 Follow these steps to authenticate to the Rackspace Cloud by
-using cURL.
+using cURL:
 
 - :ref:`Send authentication request<send-auth-req-curl>`
 - :ref:`Review the authentication response<review-auth-resp>`
@@ -41,9 +41,8 @@ response that includes the following information:
    /sample-auth-req-response>` in the Rackspace Cloud API documentation.
 
 In the following example, the ellipsis (...)  represents other service
-endpoints, which  are not shown. The values shown in this and other examples
+endpoints that are not shown. The values shown in this and other examples
 vary because the information returned is specific to your account.
-
 
 **Example: Authentication response**
 
@@ -52,7 +51,8 @@ vary because the information returned is specific to your account.
 If the request was successful, it returns the following values that you need to
 include when you make service requests to the Rackspace product API:
 
-token ID
+**token ID**:
+
     The token ID value is required to confirm your identity each time you
     access the service. Include it in the ``X-Auth-Token`` header for each
     API request.
@@ -64,18 +64,20 @@ token ID
     <cloud-identity/v2/getting-started/manage-auth-tokens>`.
 
 
-tenant ID
+**tenant ID**:
+
     The tenant ID provides your account number. For most Rackspace Cloud
     service APIs, the tenant ID is appended to the API endpoint in the service
     catalog automatically. For Rackspace Cloud services, the tenant ID has the
     same value as the tenant name.
 
 
-endpoint
+**endpoint**:
+
 	The API endpoint provides the URL that you use to access the API service.
 
 If the request failed, review the response message and the following error
-message descriptions to determine next steps.
+message descriptions to determine next steps:
 
 - If you see the following error message, review the authentication request
   for syntax or coding errors. If you are using cURL, see
@@ -88,7 +90,7 @@ message descriptions to determine next steps.
 
 - If you see the following error message, verify the authentication credentials
   submitted in the authentication request. If necessary, contact your Rackspace
-  Cloud Administrator or Rackspace Support to get valid credentials.vided.
+  Cloud Administrator or Rackspace Support to get valid credentials.
 
   .. code::
 
@@ -132,7 +134,7 @@ request, prefix the variable name with a ``$``, for example ``$ENDPOINT``.
    Replace *token-id* with the authentication token ``id`` value returned
    in the authentication response.
 
-#. Export the tenant ID to an environment variable that can be supplied in
+#. Export the tenant ID to an environment variable that you can supply in
    requests that require you to specify a tenant ID.
 
    .. code::
@@ -145,7 +147,7 @@ request, prefix the variable name with a ``$``, for example ``$ENDPOINT``.
    to access.
 
 
-#. Copy the URL, and then export it to an environment variable.
+#. Copy the URL and export it to an environment variable.
 
    .. code::
 
