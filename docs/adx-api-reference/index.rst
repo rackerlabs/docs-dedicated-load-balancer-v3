@@ -4,7 +4,7 @@
 Brocade ADX load balancer API reference
 =======================================
 
-Learn about |ADX| API resources and operations, and see request and
+Learn about |ADX| API resources and operations and see request and
 response examples.
 
 Use the following base endpoint to
