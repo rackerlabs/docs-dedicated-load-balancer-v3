@@ -3,7 +3,7 @@
 cURL is a command-line tool that you can use to interact with REST interfaces.
 cURL lets you transmit and receive HTTP requests and responses from the command
 line or a shell script, which enables you to work with the API directly. cURL is
-available for Linux distributions, Mac OS® X, and Microsoft Windows®. For
+available for Linux® distributions, Mac OS® X, and Microsoft Windows®. For
 information about cURL, see `http://curl.haxx.se/ <http://curl.haxx.se/>`__.
 
 To run the cURL request examples shown in this guide on Mac OS® X, Linux, and
@@ -21,8 +21,7 @@ a script.
 .. _auth-curl-json:
 
 The following example shows a cURL command for sending an authentication
-request to
-the Rackspace Cloud Identity service.
+request to the Rackspace Cloud Identity service.
 
 **Example: cURL command for sending a JSON request**
 
@@ -139,7 +138,7 @@ Convert cURL examples to run on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The cURL examples in the Rackspace API documentation use syntax supported
-on Mac OS® X, Linux and UNIX systems. Microsoft Windows does not support
+on Mac OS X, Linux and UNIX systems. Microsoft Windows does not support
 the same format. However, you can run the examples on Windows after making the
 following changes:
 
