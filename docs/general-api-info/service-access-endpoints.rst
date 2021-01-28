@@ -4,7 +4,7 @@
 Service access
 ==============
 
-Use the following global endpoint to submit requests to the |apiservice|.
+Use the following global endpoint to submit requests to the |apiservice|:
 
 ``https://lb.dedicated.api.rackspace.com/3.0/{tenant_id}``
 
@@ -26,5 +26,5 @@ specific type:
     You must :ref:`authenticate <authenticate-to-identity-service>` before you
     can submit requests. 
     
-    However, this service is not required to be in your service catalog.
-    If you don't see it listed, you are still able to access it.
+    However, your service catalog does not need to have this service.
+    If you don't see it listed, you can still access it.
