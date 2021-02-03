@@ -4,9 +4,9 @@
 Request and response types
 ==========================
 
-The |apiservice| supports JSON data serialization formats. The request
-format is specified by using the ``Content-Type`` header and is required for
-operations that have a request body. The response format can be specified in
+The |apiservice| supports JSON data serialization formats. You can specify the
+request format by using the ``Content-Type`` header, and operations that have a
+request body must have this header. You can specify the response format in
 requests by using the ``Accept`` header. Note that JSON is the default and only 
 format for data serialization.
 
