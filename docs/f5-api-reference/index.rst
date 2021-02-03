@@ -5,7 +5,7 @@ F5 Big-IP load balancer API reference
 =====================================
 
 **Note:** *This is a custom Rackspace API which exposes methods to view and
-manage F5 Load Balancer resources within Rackspace only. This is NOT a
+manage F5 Load Balancer resources within Rackspace only. This is **not** a
 direct implementation of the official BigIP F5 API, and therefore is not
 supported by their official SDK*.
 
