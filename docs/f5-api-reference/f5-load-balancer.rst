@@ -1,4 +1,4 @@
-Important Concepts
+Important concepts
 ~~~~~~~~~~~~~~~~~~
 
 .. contents::
@@ -8,24 +8,22 @@ Important Concepts
 Disable versus offline
 ----------------------
 
-You can configure some resources to be disabled or forced offline. It's
-important to note the key differences.
+You can configure the system to disable some resources or force them offline.
+Notice the key differences.
 
 The difference between disabling a pool member or node or marking it offline
 concerns the connections they still permit.
 
-* **Disable**: permits active and persistent connections.
-* **Offline**: permite only active connections.
+* **Disable**: Allows active and persistent connections.
+* **Offline**: Allows only active connections.
 
-These differences mainly come into use when you perform connection draining and
-you require granularity over what sessions are still permitted.
-
-
+These differences are usually significant when you perform connection draining and
+require granularity over what sessions are still permitted.
 
 Retrieve load balancer information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Retrieve load balancer information like the model number, OS version,
+Retrieve load balancer information, such as the model number, OS version,
 CPU statistics, and so on.
 
 ::
@@ -105,7 +103,7 @@ Use the nodes API operations to list, delete, and update nodes.
 Retrieve nodes
 --------------
 
-Retrieve all nodes that have been configured in the load balancer.
+Retrieve all nodes configured in the load balancer.
 
 
 ::
@@ -197,9 +195,9 @@ The node was created successfully.
 Retrieve node statistics
 ------------------------
 
-Retrieve statistics for all nodes that were added to the load balancer.
+Retrieve statistics for all nodes added to the load balancer.
 
-You can use links in the response to retrieve information about a specific
+You can use the links in the response to retrieve information about a specific
 node.
 
 ::
@@ -247,7 +245,7 @@ Response
 Retrieve node information by node ID
 -------------------------------------
 
-Returns information about the node associated with the node ID.
+Retrieve information about the node associated with the node ID.
 
 ::
 
@@ -457,7 +455,7 @@ Enable node after maintenance
 
 This setting allows the node (all services on an IP address) to accept new
 connections.
-Use this feature to enable a node after a maintenance.
+Use this feature to enable a node after maintenance.
 
 ::
 
@@ -526,7 +524,7 @@ Response
 Online node after maintenance
 -----------------------------
 
-Use this setting to bring a node back online (usually after a maintenance).
+Use this setting to bring a node back online, usually after maintenance.
 
 Request body
 ^^^^^^^^^^^^
@@ -556,7 +554,7 @@ Response
 Monitors
 ~~~~~~~~
 
-Monitors verify the health and availability of a node, a pool, or a group of
+Monitors verify the health and availability of a node, pool, or group of
 nodes in a pool.
 
 .. contents::
@@ -632,7 +630,7 @@ Response
 Add a monitor rule to automate checks
 -------------------------------------
 
-Apply monitor rule to the specified node.
+Apply a monitor rule to the specified node.
 To find the names of the available monitors, submit
 a **GET monitors** request.
 
@@ -666,8 +664,8 @@ Response
       }
     }
 
-Remove monitor rule from a node
--------------------------------
+Remove a monitor rule from a node
+---------------------------------
 
 Remove the monitor rule from the specified node.
 
@@ -676,8 +674,8 @@ Remove the monitor rule from the specified node.
    This operation does not remove the monitor from the load balancer
    configuration.
 
-   When you delete a monitor rule, all monitors associated to
-   the node are deleted as well.
+   When you delete a monitor rule, the system deletes all monitors
+   associated to the node as well.
 
 ::
 
@@ -705,7 +703,7 @@ Pools
 ~~~~~
 
 Pools are customizable containers configured on load balancers to
-specify the backend devices (nodes) for managing web traffic. Each pool
+specify the back-end devices (nodes) for managing web traffic. Each pool
 can contain zero or more nodes, known as a pool member. You can bind pools
 to one or more virtual servers.
 
@@ -767,8 +765,7 @@ Response
 Retrieve pool statistics
 ------------------------
 
-Retrieve statistics for all pools associated that have been created in a load
-balancer.
+Retrieve statistics for all associated pools in a load balancer.
 
 ::
 
@@ -838,7 +835,7 @@ Retrieve a pool by ID
 ---------------------
 
 Retrieve information about a specified pool by using the pool ID.
-Use the **Retrieve pools** operation to pool specified by a pool ID.
+Use the **Retrieve pools** operation to retireve all pools.
 
 ::
 
@@ -977,8 +974,8 @@ Delete a pool specified by using a Pool ID.
         }
     }
 
-Retrieve monitor rule for a pool
---------------------------------
+Retrieve a monitor rule for a pool
+----------------------------------
 
 Retrieve a monitor rule associated with a specified pool.
 
@@ -1008,12 +1005,11 @@ Retrieve the monitor-rule specified.
             ]
         }
 
-Update monitor rule for a pool
+Update a monitor rule for a pool
 --------------------------------
 
 Update the monitor rule applied to a specified pool. Use the **retrieve
-monitors
-by pool ID** operation to find the monitor rule name.
+monitors by pool ID** operation to find the monitor rule name.
 
 ::
 
@@ -1086,8 +1082,8 @@ Remove monitor rule from a pool
 Delete a monitor rule for the specified pool.
 
 .. note::
-   When a monitor-rule is deleted, all monitors associated to
-   the pool will be deleted as well.
+   When you delete a monitor-rule, the system deletes all monitors associated
+   to the pool as well.
 
 ::
 
@@ -1113,7 +1109,7 @@ Response
 Retrieve pool member statistics for a pool
 ------------------------------------------
 
-Retrieve statistics for each pool member in a specified pool including
+Retrieve statistics for each pool member in a specified pool, including
 configuration settings, availability, and monitoring status. The response
 includes links to access a detail view for each member.
 
@@ -1184,9 +1180,9 @@ Response
 Pool members
 ~~~~~~~~~~~~
 
-Pool members are logical physical objects that represent a single internal
-physical server IP address and listener port. Pool members are assigned to
-pools and are used to load balance traffic directed to the pool associated with
+Pool members are logical, physical objects representing a single internal
+physical server IP address and listener port. You assign pool members to
+pools and use them to load balance traffic directed to the pool associated with
 a virtual server configured in the load balancer.
 
 Use the following operations to view and manage pool members.
@@ -1241,7 +1237,7 @@ Response
 Create a pool member in a pool
 -------------------------------
 
-Creates a pool member by adding an existing node to a
+Create a pool member by adding an existing node to a
 specified pool.
 
 ::
@@ -1277,7 +1273,7 @@ Response
 Retrieve statistics for pool members
 -------------------------------------
 
-Retrieve statistics for all pool members in a specified pool including
+Retrieve statistics for all pool members in a specified pool, including
 configuration settings, availability, and monitoring status.
 
 ::
@@ -1421,10 +1417,10 @@ Update a pool member by pool ID.
         }
     }
 
-Remove pool member from pool
-----------------------------
+Remove a pool member from pool
+------------------------------
 
-Remove a pool member by pool ID.
+Remove a pool member by a specified pool ID.
 
 ::
 
@@ -1448,11 +1444,11 @@ Response
         }
     }
 
-Retrieve pool member monitor rule
-----------------------------------
+Retrieve a pool member monitor rule
+-----------------------------------
 
 Retrieves configuration settings for a monitor
-rule applied to a specified pool member
+rule applied to a specified pool member.
 
 ::
 
@@ -1475,8 +1471,8 @@ Response
       ]
     }
 
-Update monitor rule for pool member
-------------------------------------
+Update a monitor rule for pool member
+-------------------------------------
 
 Update the configuration settings for the monitor rule applied to a specified
 pool member.
@@ -1552,8 +1548,8 @@ Response
     }
 
 
-Remove monitor rule from pool member
-------------------------------------
+Remove a monitor rule from a pool member
+----------------------------------------
 
 Remove the monitor rule applied to a specified
 pool member (``memberId``) in a specified pool (``poolId``).
@@ -1580,8 +1576,8 @@ event ID to retrieve event status and output information.
         }
     }
 
-Retrieve statistics for pool member
------------------------------------
+Retrieve statistics for a pool member
+-------------------------------------
 
 Retrieve configuration, monitor settings, and other data for a pool member.
 
@@ -1643,10 +1639,10 @@ Response
         ]
     }
 
-Disable pool member for maintenance
------------------------------------
+Disable a pool member for maintenance
+-------------------------------------
 
-This setting allows the pool member (combination of IP and port) to accept
+This setting allows the pool member (a combination of IP and port) to accept
 only new connections that match an existing persistence session.
 Use this feature to prevent new connections to a pool member without
 affecting existing client connections on the same pool member.
@@ -1689,12 +1685,12 @@ Response
         }
     }
 
-Enable pool member after maintenance
-------------------------------------
+Enable a pool member after maintenance
+--------------------------------------
 
-This setting allows the pool member (combination of IP and Port) to accept
+This setting allows the pool member (a combination of IP and Port) to accept
 new connections.
-Use this feature to enable a pool member after a maintenance.
+Use this feature to enable a pool member after maintenance.
 
 ::
 
@@ -1725,10 +1721,10 @@ Response
     }
 
 
-Offline pool member for maintenance
------------------------------------
+Offline a pool member for maintenance
+-------------------------------------
 
-This setting allows you to force a pool member offline and allows only active
+This setting enables you to force a pool member offline and allows only active
 connections.
 
 To bring the pool member back online, see:
@@ -1762,11 +1758,10 @@ Response
     }
 
 
-Online pool member after maintenance
-------------------------------------
+Online a pool member after maintenance
+--------------------------------------
 
-Use this setting to bring a pool member back online
-(usually after a maintenance).
+Use this setting to bring a pool member back online, usually after maintenance.
 
 Request body
 ^^^^^^^^^^^^
@@ -1812,7 +1807,7 @@ Retrieve virtual server details
 -------------------------------
 
 Retrieve information about all virtual servers configured in the load
-balancer including configuration data and status information.
+balancer, including configuration data and status information.
 
 ::
 
@@ -2246,7 +2241,7 @@ Response
 Update a virtual server by ID
 -----------------------------
 
-Update a virtual in a device specified by using the virtual ID.
+Update the virtual server on a specified device by using the virtual ID.
 
 When you update an existing virtual server, you must specify the address and
 port in the request.
@@ -2325,8 +2320,8 @@ status and output information.
 Retrieve persistent profiles for a virtual server
 -------------------------------------------------
 
-Returns information about the persistent profiles configured for a virtual
-server. These profiles enable tracking and storage of session data to ensure
+Retrieve information about the persistent profiles configured for a virtual
+server. These profiles enable tracking and storing session data to ensure
 that client requests are directed to the same pool member throughout the life
 of a session or during subsequent sessions.
 
@@ -2349,8 +2344,8 @@ Response
         ]
     }
 
-Update virtual server persistent profile
-----------------------------------------
+Update a virtual server persistent profile
+------------------------------------------
 
 Update the persistent profile for a virtual server.
 
@@ -2522,8 +2517,8 @@ Retrieve a list of stats.
     }
 
 
-Retrieve a virtual pool by virtual ID.
---------------------------------------
+Retrieve virtual pools by virtual ID
+------------------------------------
 
 Retrieve information about the virtual pools associated with a specified
 virtual server.
@@ -2659,8 +2654,8 @@ Retrieve a list of monitors.
         ]
     }
 
-Retrieve monitor by ID
------------------------
+Retrieve a monitor by ID
+------------------------
 
 Retrieve information about a specified monitor by using the monitor ID.
 
@@ -2839,8 +2834,8 @@ Events
 ~~~~~~
 
 
-Retrieve event by event id
---------------------------
+Retrieve an event by event id
+-----------------------------
 
 Retrieve event information by using the event ID.
 
