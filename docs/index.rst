@@ -7,7 +7,7 @@ Rackspace |product name| API |contract version|
 *Last updated:* |today|
 
 The |product name| service enables developers to programmatically view and
-manage their existing dedicated hardware load balancer resources such as
+manage their existing dedicated hardware load balancer resources, such as
 virtual IPs (VIPs), nodes, and health checks. You cannot use the API to
 provision dedicated hardware load balancers.
 
@@ -29,8 +29,8 @@ For details about using these load balancer models for hybrid hosting, see
 
    The |product name| provides direct access to the |F5Product| and
    |ADXProduct| device hardware. When you submit an API request
-   to add, update, or remove configuration settings, the changes are applied
-   to the device as soon as the request completes successfully.
+   to add, update, or remove configuration settings, the system applies
+   the changes to the device as soon as the request completes successfully.
    Make sure you understand the impact of an API request before you submit it.
 
 
