@@ -2,7 +2,7 @@ Retrieve device information
 ---------------------------
 
 Use the device ID operation to get complete information about the device
-with the specified ID including associated customer, usage statistics,
+with the specified ID, including associated customer, usage statistics,
 and configuration details for nodes, virtual IPs, and high availability.
 
 ::
@@ -116,7 +116,7 @@ Response
 Retrieve virtual IPs configuration
 ----------------------------------
 
-Retrieve information about all virtual servers configured in the load balancer including configuration data and status information.
+Retrieve information about all virtual servers configured in the load balancer, including configuration data and status information.
 
 ::
 
@@ -1028,8 +1028,8 @@ Request body
 OR
 ^^
 
-Request body for backward compatibilty
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Request body for backward compatibility
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
   {
@@ -1154,26 +1154,6 @@ Successfully processed the request.
             }
         }
     }
-
-
-
-Depricated API
---------------
-
-Show high availability template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-    GET /{device_id}/ha
-
-List events
-^^^^^^^^^^^
-
-::
-
-    GET /{device_id}/events
-
 
 Deprecated API
 --------------
