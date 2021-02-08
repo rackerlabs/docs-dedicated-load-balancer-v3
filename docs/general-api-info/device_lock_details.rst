@@ -1,18 +1,18 @@
 .. _device_lock_details:
 
-===================================================
-Enhancements in V3 for multiple request on a device
-===================================================
+====================================================
+Enhancements in V3 for multiple requests on a device
+====================================================
 
-The mechanism for hitting multiple requests has been changed in V3 Load Balancer API.
+The mechanism for executing multiple requests in the Load Balancer v3 API is improved.
 
-To understand this let's understand what used to be the mechanism in API 2.0 through an example :
+To illustrate this, the following sections compare the v2 and v3 API mechanism through an example:
 
-Enqueued Process Mechanism in v2.0
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enqueued process mechanism in v2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. We have a device 123456 under account 1111.
-2. While hitting a POST or PUT request the returned status is 200 OK. With response body as under :
+1. Device `123456` exists under account `1111`.
+2. When a user executes a POST or PUT request, it returns the status `200 OK`, with the following response body:
 
 ::
 
@@ -27,7 +27,7 @@ Enqueued Process Mechanism in v2.0
     }
 
 
-3. If the user hits the same request before the first one gets completed. The request goes into "ENQUEUED_PROCESSING"
+3. If the user re-executes the request before the first one completes, the request goes into `ENQUEUED_PROCESSING`:
 
 
 ::
@@ -44,20 +44,17 @@ Enqueued Process Mechanism in v2.0
         ]
     }
 
-4. There is a chance that the process goes into dead-lock and the user keeps on hitting the request thinking it's not getting completed. All of these request get queued into the server and waiting for them to complete.
+4. The process might get dead-locked, so the user keeps re-executing the request thinking they're not running. All of these
+requests get queued on the server awaiting execution.
 
-5. The user has no idea as to why his request isn't getting completed.
+The user has no idea why the requests never finish, so v3 has a lock mechanism on the device to avoid this issue.
 
-To avoid this scenario. We have implemented a lock mechanism on the device.
+Lock mechanism in v3
+^^^^^^^^^^^^^^^^^^^^
 
-Lock Mechanism in V3.0
-^^^^^^^^^^^^^^^^^^^^^^^
+1. Device `123456` exists under account `1111`.
 
-In API V3.0 the scenario is as under :
-
-1.  We have a device 123456 under account 1111.
-
-2.  While hitting a POST or PUT request the returned status is 200 OK. With response body as under :
+2. When the user executes a POST or PUT request, the returned status is `200 OK`, with the following response body:
 
 ::
 
@@ -71,7 +68,8 @@ In API V3.0 the scenario is as under :
         }
     }
 
-3. When the user hits another request before the first one gets completed. The returned response code is 423 Locked and body is as under :
+3. If the user executes another the request before the first one completes, the returned response code is `423 Locked` with the
+following repose body:
 
 ::
 
@@ -83,8 +81,7 @@ In API V3.0 the scenario is as under :
         "transactionId": "{{trans_id_str}}"
     }
 
-4. This avoids any chance of deadlock and as soon as the request gets completed the device goes out of lock.
+4. This process avoids any chance of deadlock, and as soon as the request gets completed, the device goes out of lock.
 
-5. This mechanism brings a clarity to the user as to what is happening at the back-end.
-
-6. Even when a request doesn't get completed the device is removed from lock for user to access after a certain set amount of time to avoid inconvenience for the user.
+This mechanism lets the user know what is happening on the back-end. Even if a request doesn't complete, the system removes the
+device from lock after a set length of time to avoid inconvenience for the user.
