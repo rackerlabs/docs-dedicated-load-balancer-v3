@@ -970,7 +970,7 @@ Delete a pool specified by using a Pool ID.
             "status": "PROCESSING",
             "resource": "<poolId:str>",
             "eventRef": "/events/<eventId:str>",
-            "timestamp": "2016-03-24T10:41:08.6194067Z",
+            "timestamp": "2016-03-24T10:41:08.6194067Z"
         }
     }
 
@@ -1264,7 +1264,7 @@ Response
         "data": {
             "eventId": "<eventId:str>",
             "resource": "<poolId:str>",
-            “status”: “PROCESSING”,
+            "status": "PROCESSING",
             "timestamp": "2016-03-17T09:36:42.5274609Z",
             "eventRef": "/events/<eventId:str>"
         }
@@ -1769,7 +1769,7 @@ Request body
 ::
 
     {
-        "state": "user-down"
+        "state": "user-up"
     }
 
 Response
