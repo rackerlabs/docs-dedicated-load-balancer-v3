@@ -44,3 +44,6 @@ codes and descriptions:
    * - Not extended
      - 510
      - An unexpected error occurred
+   * - Locked
+     - 423
+     - The device is locked. For detailed info -> :ref:`device_lock_details`
