@@ -52,7 +52,7 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/docs/dedicated-load-balancer-v3
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
