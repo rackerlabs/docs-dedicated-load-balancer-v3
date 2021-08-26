@@ -1,5 +1,4 @@
  .. code-block:: json
-    :emphasize-lines: 10, 15, 20, 25, 30
 
             {
                 "name": "cloudBlockStorage",

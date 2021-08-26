@@ -1,5 +1,9 @@
 .. _authenticate-using-curl:
 
+==========================
+Authenticate by using cURL
+==========================
+
 Follow these steps to authenticate to the Rackspace Cloud by
 using cURL:
 
@@ -74,7 +78,7 @@ include when you make service requests to the Rackspace product API:
 
 **endpoint**:
 
-	The API endpoint provides the URL that you use to access the API service.
+    The API endpoint provides the URL that you use to access the API service.
 
 If the request failed, review the response message and the following error
 message descriptions to determine next steps:

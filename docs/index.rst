@@ -41,7 +41,8 @@ This guide is intended to assist software developers who want to manage
 dedicated hardware load balancer resources by using the REST application
 programming interface (API) for the Rackspace |product name| service.
 
-To use the information provided here, you should have a general understanding of
+To use the information provided here, you should have a general
+understanding of
 the service and have access to an installation of it. You should
 also be familiar with the following technologies:
 
@@ -61,11 +62,10 @@ the |product name| service REST API:
    :maxdepth: 3
 
    Load Balancers API 3.0 <self>
-   getting-started/index
-   general-api-info/index
-   f5-api-reference/index
-   adx-api-reference/index
-   service-updates
-   additional-resources
-   copyright
-
+   getting-started/index.rst
+   general-api-info/index.rst
+   f5-api-reference/index.rst
+   adx-api-reference/index.rst
+   service-updates.rst
+   additional-resources.rst
+   copyright.rst

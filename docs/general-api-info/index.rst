@@ -14,16 +14,17 @@ details about specific operations, see the API reference sections.
 .. toctree::
    :maxdepth: 1
 
-   service-access-endpoints
-   api-contract-version
-   request-and-response-types
-   date-time-format
-   faults
-   limits
+   service-access-endpoints.rst
+   api-contract-version.rst
+   request-and-response-types.rst
+   date-time-format.rst
+   faults.rst
+   limits.rst
+   device_lock_details.rst
 
 
 .. note::
-    All requests to authenticate against and operate the service are
-    performed using SSL over HTTP (HTTPS) on TCP port `443`. For authentication
-    instructions, see
-    :ref:`Authenticate to the Rackspace Cloud<authenticate-to-identity-service>`.
+   All requests to authenticate against and operate the service are
+   performed using SSL over HTTP (HTTPS) on TCP port `443`. For authentication
+   instructions, see
+   :ref:`Authenticate to the Rackspace Cloud <authenticate-to-identity-service>`.
