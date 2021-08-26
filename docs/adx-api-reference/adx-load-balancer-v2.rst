@@ -1,3 +1,6 @@
+.. _adx-load-balancer-v3:
+
+
 Retrieve device information
 ---------------------------
 
@@ -116,7 +119,8 @@ Response
 Retrieve virtual IPs configuration
 ----------------------------------
 
-Retrieve information about all virtual servers configured in the load balancer, including configuration data and status information.
+Retrieve information about all virtual servers configured in the load
+balancer, including configuration data and status information.
 
 ::
 

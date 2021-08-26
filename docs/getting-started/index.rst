@@ -10,10 +10,16 @@ tasks:
 .. toctree::
    :maxdepth: 1
 
-   get-credentials-include
-   send-request-ovw
-   authenticate
-   concepts
+   get-credentials-include.rst
+   send-request-ovw.rst
+   authenticate.rst
+   concepts.rst
+   examples/list-load-balancer-details.rst
+   examples/retrieve-lb-info.rst
+   examples/manage-monitors.rst
+   examples/manage-nodes.rst
+   examples/manage-pools.rst
+   examples/virtuals.rst
 
 
 To start using the API and run the examples in this section, you need the

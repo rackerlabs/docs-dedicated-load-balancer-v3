@@ -1,14 +1,16 @@
 Disclaimer
 =============
 
-**THE INFORMATION CONTAINED IN THE RACKSPACE DEVELOPER DOCUMENTATION IS INTENDED
+**THE INFORMATION CONTAINED IN THE RACKSPACE DEVELOPER DOCUMENTATION IS
+INTENDED
 **FOR SOFTWARE DEVELOPERS INTERESTED IN DEVELOPING SERVICE MANAGEMENT
 **APPLICATIONS USING THE RACKSPACE APPLICATION PROGRAMMING INTERFACE (API). THE
 **DOCUMENT IS FOR INFORMATIONAL PURPOSES ONLY AND IS PROVIDED “AS IS.”**
 
 Except as set forth in Rackspace general terms and conditions, cloud terms of
 service and/or other agreement you sign with Rackspace, Rackspace assumes no
-liability whatsoever, and disclaims any express or implied warranty, relating to
+liability whatsoever, and disclaims any express or implied
+warranty, relating to
 its services including, but not limited to, the implied warranty of
 merchantability, fitness for a particular purpose, and noninfringement.
 

@@ -1,8 +1,13 @@
 .. _how-curl-commands-work:
 
+===============
+How to use cURL
+===============
+
 cURL is a command-line tool that you can use to interact with REST interfaces.
 cURL lets you transmit and receive HTTP requests and responses from the command
-line or a shell script, which enables you to work with the API directly. cURL is
+line or a shell script, which enables you to work with the API directly. cURL
+is
 available for Linux® distributions, Mac OS® X, and Microsoft Windows®. For
 information about cURL, see `http://curl.haxx.se/ <http://curl.haxx.se/>`__.
 
@@ -27,11 +32,14 @@ request to the Rackspace Cloud Identity service.
 
 .. include:: ../common-gs/samples/auth-req-curl.rst
 
-In this example, ``$apiKey`` is an environment variable that stores your API key
+In this example, ``$apiKey`` is an environment variable that stores your API
+key
 value. Environment variables make it easier to reference account information in
-API requests, to reuse the same cURL commands with different credentials, and to
+API requests, to reuse the same cURL commands with different credentials, and
+to
 keep sensitive information like your API key from being exposed when you send
-requests to Rackspace Cloud API services. For details about creating environment
+requests to Rackspace Cloud API services. For details about creating
+environment
 variables, see :ref:`Configure environment variables
 <configure-environment-variables>`.
 

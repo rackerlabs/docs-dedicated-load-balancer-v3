@@ -1,9 +1,19 @@
+.. _f5-load-balancer:
+
+==========================
+F5 load balancer API calls
+==========================
+
+
+
 Important concepts
 ~~~~~~~~~~~~~~~~~~
 
 .. contents::
      :depth: 1
      :local:
+
+.. _disable-vs-offline:
 
 Disable versus offline
 ----------------------
@@ -17,8 +27,8 @@ concerns the connections they still permit.
 * **Disable**: Allows active and persistent connections.
 * **Offline**: Allows only active connections.
 
-These differences are usually significant when you perform connection draining and
-require granularity over what sessions are still permitted.
+These differences are usually significant when you perform connection draining
+and require granularity over what sessions are still permitted.
 
 Retrieve load balancer information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -418,8 +428,9 @@ existing client connections on the same node.
 
 To re-enable the node, see: `Enable node after maintenance`_.
 
-*Note: It is important to understand differences between*
-`Disable versus offline`_.
+.. note::
+
+   It is important to understand differences between :ref:`disable-vs-offline`.
 
 ::
 
@@ -493,8 +504,9 @@ This setting forces a node offline and allows only active connections.
 
 To bring the node back online, see: `Online node after maintenance`_.
 
-*Note: It is important to understand differences between*
-`Disable versus offline`_.
+.. note::
+
+   It is important to understand differences between :ref:`disable-vs-offline`.
 
 Request body
 ^^^^^^^^^^^^
@@ -1270,6 +1282,8 @@ Response
         }
     }
 
+.. _retrieve-statistics:
+
 Retrieve statistics for pool members
 -------------------------------------
 
@@ -1648,14 +1662,15 @@ Use this feature to prevent new connections to a pool member without
 affecting existing client connections on the same pool member.
 
 To monitor connection stats of a pool member, see:
-`Retrieve statistics for pool members`_. Review the first object in the
+:ref:`retrieve-statistics`. Review the first object in the
 data array.
 The ``serverside`` object shows stats on activity to the member.
 
-To re-enable the pool member, see: `Enable pool member after maintenance`_.
+To re-enable the pool member, see :ref:`enable-pool-member`.
 
-*Note: It is important to understand differences between*
-`Disable versus offline`_.
+.. note::
+
+   It is important to understand differences between :ref:`disable-vs-offline`.
 
 ::
 
@@ -1684,6 +1699,8 @@ Response
             "eventRef": "/events/<eventId:str>"
         }
     }
+
+.. _enable-pool-member:
 
 Enable a pool member after maintenance
 --------------------------------------
@@ -1727,11 +1744,9 @@ Offline a pool member for maintenance
 This setting enables you to force a pool member offline and allows only active
 connections.
 
-To bring the pool member back online, see:
-`Online pool member after maintenance`_.
+.. note::
 
-*Note: It is important to understand differences between*
-`Disable versus offline`_.
+   It is important to understand differences between :ref:`disable-vs-offline`.
 
 Request body
 ^^^^^^^^^^^^

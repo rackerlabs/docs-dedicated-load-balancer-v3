@@ -89,8 +89,8 @@ for the virtual server uses the pool as its resource. For a pool to
 serve its function of fault tolerance and redundancy, multiple pool members
 must be available inside the pool. When a pool has multiple
 members, the load balancer decides which one receives the client traffic based
-on the load balancing method configured on the device (such as Round Robin, Weighted
-Robin, or Least Connection).
+on the load balancing method configured on the device (such as Round
+Robin, Weighted Robin, or Least Connection).
 
 
 .. _pools-concept:
@@ -127,17 +127,20 @@ A node is a logical object that provides the IP address of a single, physical
 backend device, such as a web server. Nodes are the base configuration
 object when creating a virtual server.
 
-In an |F5|, the system automatically adds the node when you add a member to a pool.
+In an |F5|, the system automatically adds the node when you add a member to a
+pool.
 
 .. _event-concept:
 
 Event
 ~~~~~
 
-You can use events to track asynchronous backend processing status. The system generates
-these events when a user performs an action on the load balancer that 
-updates a device. The returned response object includes an event ID,  
-event type, status of the request, and the timestamp when the system created the event.
+You can use events to track asynchronous backend processing status. The system
+generates
+these events when a user performs an action on the load balancer that
+updates a device. The returned response object includes an event ID,
+event type, status of the request, and the timestamp when the system created
+the event.
 
 .. _monitor-concept:
 

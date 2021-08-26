@@ -13,8 +13,8 @@ products and links
 to official Rackspace support channels, including How-To articles, phone,
 chat, and email resources.
 
-Use the following links to learn more about using the |product name| service and
-API.
+Use the following links to learn more about using the |product name| service
+and API.
 
 - For general information about |product name|, see the FAQ in the
   `Rackspace How-To`_.

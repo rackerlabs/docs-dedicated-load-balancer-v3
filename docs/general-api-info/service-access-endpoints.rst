@@ -24,7 +24,7 @@ specific type:
 .. note::
 
     You must :ref:`authenticate <authenticate-to-identity-service>` before you
-    can submit requests. 
-    
+    can submit requests.
+
     However, your service catalog does not need to have this service.
     If you don't see it listed, you can still access it.
