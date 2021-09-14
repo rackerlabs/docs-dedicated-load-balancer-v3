@@ -14,3 +14,9 @@
 [context.deploy-preview]
   publish = "docs/_build/html"
   command = "cd docs && make clean html && cd .."
+
+[[redirects]]
+  from = "/*"
+  to = "/docs/dedicated-load-balancer-v3/:splat"
+  status = 301
+  force = false
