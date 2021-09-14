@@ -8,7 +8,7 @@ We welcome feedback, comments, and bug reports. Contact your Rackspace Support
 team
 for additional assistance.
 
-The `Rackspace How-To`_ offers information about Rackspace Cloud and Hybrid
+The `Rackspace website <http://support.rackspace.com>`_  offers information about Rackspace Cloud and Hybrid
 products and links
 to official Rackspace support channels, including How-To articles, phone,
 chat, and email resources.
