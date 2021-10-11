@@ -1,6 +1,6 @@
 .. _authenticate-using-curl:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Authenticate by using cURL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
