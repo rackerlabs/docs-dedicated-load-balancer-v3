@@ -1,8 +1,8 @@
 .. _env-variables:
 
-===========================
-Using environment variables
-===========================
+
+**Using environment variables**
+
 
 ..  note::
 
